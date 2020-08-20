@@ -81,11 +81,9 @@ enum consumer_usages {
     AC_REFRESH             = 0x227,
     AC_BOOKMARKS           = 0x22A,
     AC_SHOW_ALL_WINDOWS    = 0x29F,
-
-    // Note: As of July 2020, "AC Desktop Show All Applications"
-    // was reassigned to 0x2A2 (Request HUTRR97), though macOS and
-    // possibly other desktops still use 0x2A0 as of August 2020.
-    // https://www.usb.org/sites/default/files/hutrr97_-_navigation_and_desktop_show_all_usageid_reassignment.pdf
+    /* As of July 2020, "AC Desktop Show All Applications" was reassigned
+     * to 0x2A2, though macOS still uses 0x2A0 as of August 2020.
+     * https://www.usb.org/sites/default/files/hutrr97_-_navigation_and_desktop_show_all_usageid_reassignment.pdf */
     AC_SHOW_ALL_APPS       = 0x2A0
 };
 

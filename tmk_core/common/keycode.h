@@ -522,10 +522,10 @@ enum internal_special_keycodes {
     KC_FN30,
     KC_FN31,  // 0xDF
 
-    // ***************************************************
-    // * 0xE0-0xE7 are already assigned in the HID spec. *
-    // * We must skip this range and resume at 0xE8.     *
-    // ***************************************************
+    /***************************************************
+     * 0xE0-0xE7 are already assigned in the HID spec. *
+     * We must skip this range and resume at 0xE8.     *
+     ***************************************************/
 
     /* GUI desktop controls */
     KC_SHOW_ALL_WINDOWS = 0xE8,
