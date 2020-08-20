@@ -65,6 +65,7 @@ action_t action_for_key(uint8_t layer, keypos_t key) {
             action.code = ACTION_USAGE_SYSTEM(KEYCODE2SYSTEM(keycode));
             break;
         case KC_AUDIO_MUTE ... KC_BRIGHTNESS_DOWN:
+        case KC_SHOW_ALL_WINDOWS ... KC_SHOW_ALL_APPS:
             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
             break;
 #endif

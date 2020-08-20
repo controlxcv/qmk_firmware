@@ -33,7 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define IS_SPECIAL(code) ((0xA5 <= (code) && (code) <= 0xDF) || (0xE8 <= (code) && (code) <= 0xFF))
 #define IS_SYSTEM(code) (KC_PWR <= (code) && (code) <= KC_WAKE)
-#define IS_CONSUMER(code) (KC_MUTE <= (code) && (code) <= KC_BRID)
+#define IS_CONSUMER(code) ((KC_MUTE <= (code) && (code) <= KC_BRID) || (KC_MCON <= (code) && (code) <= KC_LPAD))
 
 #define IS_FN(code) (KC_FN0 <= (code) && (code) <= KC_FN31)
 
@@ -212,6 +212,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KC_ACL0 KC_MS_ACCEL0
 #define KC_ACL1 KC_MS_ACCEL1
 #define KC_ACL2 KC_MS_ACCEL2
+
+/* GUI desktop controls */
+#define KC_MCON KC_SHOW_ALL_WINDOWS
+#define KC_LPAD KC_SHOW_ALL_APPS
 
 /* Keyboard/Keypad Page (0x07) */
 enum hid_keyboard_keypad_usage {
@@ -516,7 +520,16 @@ enum internal_special_keycodes {
     KC_FN28,
     KC_FN29,
     KC_FN30,
-    KC_FN31
+    KC_FN31,  // 0xDF
+
+    // ***************************************************
+    // * 0xE0-0xE7 are already assigned in the HID spec. *
+    // * We must skip this range and resume at 0xE8.     *
+    // ***************************************************
+
+    /* GUI desktop controls */
+    KC_SHOW_ALL_WINDOWS = 0xE8,
+    KC_SHOW_ALL_APPS
 };
 
 enum mouse_keys {

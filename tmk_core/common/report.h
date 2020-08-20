@@ -79,7 +79,14 @@ enum consumer_usages {
     AC_FORWARD             = 0x225,
     AC_STOP                = 0x226,
     AC_REFRESH             = 0x227,
-    AC_BOOKMARKS           = 0x22A
+    AC_BOOKMARKS           = 0x22A,
+    AC_SHOW_ALL_WINDOWS    = 0x29F,
+
+    // Note: As of July 2020, "AC Desktop Show All Applications"
+    // was reassigned to 0x2A2 (Request HUTRR97), though macOS and
+    // possibly other desktops still use 0x2A0 as of August 2020.
+    // https://www.usb.org/sites/default/files/hutrr97_-_navigation_and_desktop_show_all_usageid_reassignment.pdf
+    AC_SHOW_ALL_APPS       = 0x2A0
 };
 
 /* Generic Desktop Page (0x01)
@@ -249,6 +256,10 @@ static inline uint16_t KEYCODE2CONSUMER(uint8_t key) {
             return BRIGHTNESS_DOWN;
         case KC_WWW_FAVORITES:
             return AC_BOOKMARKS;
+        case KC_SHOW_ALL_WINDOWS:
+            return AC_SHOW_ALL_WINDOWS;
+        case KC_SHOW_ALL_APPS:
+            return AC_SHOW_ALL_APPS;
         default:
             return 0;
     }
