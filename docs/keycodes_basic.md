@@ -221,6 +221,8 @@ These keycodes are not part of the Keyboard/Keypad usage page. The `SYSTEM_` key
 |`KC_MEDIA_REWIND`      |`KC_MRWD`|Previous Track (macOS)       |
 |`KC_BRIGHTNESS_UP`     |`KC_BRIU`|Brightness Up                |
 |`KC_BRIGHTNESS_DOWN`   |`KC_BRID`|Brightness Down              |
+|`KC_SHOW_ALL_WINDOWS`  |`KC_MCON`|Mission Control (macOS)      |
+|`KC_SHOW_ALL_APPS`     |`KC_LPAD`|Launchpad (macOS)            |
 
 ## Number Pad
 
