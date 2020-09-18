@@ -25,6 +25,7 @@ enum my_consumer_usages {
 
 enum my_layers {
     _BASE = 0,
+    _EDIT,
     _NPAD,
     _FUNC,
     _TEST = 13,
@@ -34,6 +35,7 @@ enum my_layers {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE]  = KEYMAP_BASE,
+    [_EDIT]  = KEYMAP_EDIT,
     [_NPAD]  = KEYMAP_NPAD,
     [_FUNC]  = KEYMAP_FUNC,
     [_TEST]  = KEYMAP_TEST,

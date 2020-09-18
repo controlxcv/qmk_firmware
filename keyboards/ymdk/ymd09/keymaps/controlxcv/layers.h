@@ -6,6 +6,12 @@
               G(KC_SPC),  _KC_MCON,      _KC_LPAD, \
               KC_MS_BTN1, KC_MS_BTN2,    KC_MS_BTN3 )
 
+/* Editing layout (macOS) */
+#define KEYMAP_EDIT LAYOUT( \
+    LT(_MODE, KC_ESC), G(KC_Z), G(S(KC_Z)), \
+              G(KC_X), KC_SPC,  KC_BSPC, \
+              G(KC_C), G(KC_V), KC_ENT  )
+
 /* Numeric keypad 1 to 9 */
 #define KEYMAP_NPAD LAYOUT( \
     LT(_MODE, KC_KP_7), KC_KP_8, KC_KP_9, \
@@ -28,7 +34,7 @@
 #define KEYMAP_MODE LAYOUT( \
     _______,   TO(_BASE),   MO(_DEV), \
     XXXXXXX,   XXXXXXX,   XXXXXXX, \
-    TO(_NPAD), TO(_FUNC), XXXXXXX )
+    TO(_EDIT), TO(_NPAD), TO(_FUNC) )
 
 /* Developer tools */
 #define KEYMAP_DEV LAYOUT( \
