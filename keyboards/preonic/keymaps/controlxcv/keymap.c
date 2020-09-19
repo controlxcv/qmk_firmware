@@ -16,7 +16,6 @@
 
 #include QMK_KEYBOARD_H
 #include "muse.h"
-#include "keymap_jp.h"
 
 #include "layers.h"
 
