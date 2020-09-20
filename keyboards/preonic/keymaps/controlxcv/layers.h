@@ -56,10 +56,10 @@
     _______,    _______,    _______,    KC_F15,     KC_F5,      \
     _______,    _______,    _______,    KC_F16,     KC_F6,      \
     KC_PENT,    _______,    _______,    KC_F17,     KC_F7,      \
-    KC_HOME,    _______,    _______,    KC_F18,     KC_F8,      \
-    KC_PGDN,    _______,    _______,    KC_F19,     KC_F9,      \
-    KC_PGUP,    _______,    _______,    KC_NLCK,    KC_F10,     \
-    KC_END,     _______,    KC_RBRC,    KC_LBRC,    KC_DEL      \
+    KC_BSPC,    _______,    _______,    KC_F18,     KC_F8,      \
+    KC_LEFT,    _______,    _______,    KC_F19,     KC_F9,      \
+    KC_RGHT,    _______,    _______,    KC_NLCK,    KC_F10,     \
+    KC_DEL,     _______,    KC_RBRC,    KC_LBRC,    KC_DEL      \
 )
 
 #define KEYMAP_RAISE LAYOUT_preonic_grid_vertical( \
