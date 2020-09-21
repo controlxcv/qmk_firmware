@@ -2,65 +2,48 @@
 
 #include "macros.h"
 
-#define ___X___ XXXXXXX
-
 #define KEYMAP_QWERTY LAYOUT_preonic_grid_vertical(             \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    KC_Z,       KC_A,       KC_Q,       ___X___,    \
-    ___X___,    KC_X,       KC_S,       KC_W,       ___X___,    \
-    ___X___,    KC_C,       KC_D,       KC_E,       ___X___,    \
-    ___X___,    KC_V,       KC_F,       KC_R,       ___X___,    \
-    ___X___,    KC_B,       KC_G,       KC_T,       ___X___,    \
-    ___X___,    KC_N,       KC_H,       KC_Y,       ___X___,    \
-    ___X___,    KC_M,       KC_J,       KC_U,       ___X___,    \
-    ___X___,    KC_COMM,    KC_K,       KC_I,       ___X___,    \
-    ___X___,    KC_DOT,     KC_L,       KC_O,       ___X___,    \
-    ___X___,    KC_SLSH,    KC_SCLN,    KC_P,       ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___     \
-)
-
-#define KEYMAP_COLEMAK LAYOUT_preonic_grid_vertical(            \
-    ___X___,    ___X___,    ___X___,     ___X___,   ___X___,    \
-    ___X___,    KC_Z,       KC_A,       KC_Q,       ___X___,    \
-    ___X___,    KC_X,       KC_R,       KC_W,       ___X___,    \
-    ___X___,    KC_C,       KC_S,       KC_F,       ___X___,    \
-    ___X___,    KC_V,       KC_T,       KC_P,       ___X___,    \
-    ___X___,    KC_B,       KC_D,       KC_G,       ___X___,    \
-    ___X___,    KC_K,       KC_H,       KC_J,       ___X___,    \
-    ___X___,    KC_M,       KC_N,       KC_L,       ___X___,    \
-    ___X___,    KC_COMM,    KC_E,       KC_U,       ___X___,    \
-    ___X___,    KC_DOT,     KC_I,       KC_Y,       ___X___,    \
-    ___X___,    KC_SLSH,    KC_O,       KC_SCLN,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___     \
-)
-
-#define KEYMAP_DVORAK LAYOUT_preonic_grid_vertical(             \
-    ___X___,    ___X___,    ___X___,     ___X___,   ___X___,    \
-    ___X___,    KC_SCLN,    KC_A,       KC_SLSH,    ___X___,    \
-    ___X___,    KC_Q,       KC_O,       KC_COMM,    ___X___,    \
-    ___X___,    KC_J,       KC_E,       KC_DOT,     ___X___,    \
-    ___X___,    KC_K,       KC_U,       KC_P,       ___X___,    \
-    ___X___,    KC_X,       KC_I,       KC_Y,       ___X___,    \
-    ___X___,    KC_B,       KC_D,       KC_F,       ___X___,    \
-    ___X___,    KC_M,       KC_H,       KC_G,       ___X___,    \
-    ___X___,    KC_W,       KC_T,       KC_C,       ___X___,    \
-    ___X___,    KC_V,       KC_N,       KC_R,       ___X___,    \
-    ___X___,    KC_Z,       KC_S,       KC_L,       ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___     \
-)
-
-#define KEYMAP_COMMON LAYOUT_preonic_grid_vertical(             \
     RAISE,      KC_LSFT,    KC_TAB,     KC_BSLS,    KC_GRV,     \
-    KC_LCTL,    _______,    _______,    _______,    KC_1,       \
-    KC_LALT,    _______,    _______,    _______,    KC_2,       \
-    KC_LGUI,    _______,    _______,    _______,    KC_3,       \
-    LOWER,      _______,    _______,    _______,    KC_4,       \
-    KC_SPC,     _______,    _______,    _______,    KC_5,       \
-    KC_SPC,     _______,    _______,    _______,    KC_6,       \
-    KC_ENT,     _______,    _______,    _______,    KC_7,       \
-    KC_LEFT,    _______,    _______,    _______,    KC_8,       \
-    KC_DOWN,    _______,    _______,    _______,    KC_9,       \
-    KC_UP,      _______,    _______,    _______,    KC_0,       \
+    KC_LCTL,    KC_Z,       KC_A,       KC_Q,       KC_1,       \
+    KC_LALT,    KC_X,       KC_S,       KC_W,       KC_2,       \
+    KC_LGUI,    KC_C,       KC_D,       KC_E,       KC_3,       \
+    LOWER,      KC_V,       KC_F,       KC_R,       KC_4,       \
+    KC_SPC,     KC_B,       KC_G,       KC_T,       KC_5,       \
+    KC_SPC,     KC_N,       KC_H,       KC_Y,       KC_6,       \
+    KC_ENT,     KC_M,       KC_J,       KC_U,       KC_7,       \
+    KC_LEFT,    KC_COMM,    KC_K,       KC_I,       KC_8,       \
+    KC_DOWN,    KC_DOT,     KC_L,       KC_O,       KC_9,       \
+    KC_UP,      KC_SLSH,    KC_SCLN,    KC_P,       KC_0,       \
+    KC_RGHT,    KC_QUOT,    KC_MINS,    KC_EQL,     KC_BSPC     \
+)
+
+#define KEYMAP_COLEMAK LAYOUT_preonic_grid_vertical(             \
+    RAISE,      KC_LSFT,    KC_TAB,     KC_BSLS,    KC_GRV,     \
+    KC_LCTL,    KC_Z,       KC_A,       KC_Q,       KC_1,       \
+    KC_LALT,    KC_X,       KC_R,       KC_W,       KC_2,       \
+    KC_LGUI,    KC_C,       KC_S,       KC_F,       KC_3,       \
+    LOWER,      KC_V,       KC_T,       KC_P,       KC_4,       \
+    KC_SPC,     KC_B,       KC_D,       KC_G,       KC_5,       \
+    KC_SPC,     KC_K,       KC_H,       KC_J,       KC_6,       \
+    KC_ENT,     KC_M,       KC_N,       KC_L,       KC_7,       \
+    KC_LEFT,    KC_COMM,    KC_E,       KC_U,       KC_8,       \
+    KC_DOWN,    KC_DOT,     KC_I,       KC_Y,       KC_9,       \
+    KC_UP,      KC_SLSH,    KC_O,       KC_SCLN,    KC_0,       \
+    KC_RGHT,    KC_QUOT,    KC_MINS,    KC_EQL,     KC_BSPC     \
+)
+
+#define KEYMAP_DVORAK LAYOUT_preonic_grid_vertical(            \
+    RAISE,      KC_LSFT,    KC_TAB,     KC_BSLS,    KC_GRV,     \
+    KC_LCTL,    KC_SCLN,    KC_A,       KC_SLSH,    KC_1,       \
+    KC_LALT,    KC_Q,       KC_O,       KC_COMM,    KC_2,       \
+    KC_LGUI,    KC_J,       KC_E,       KC_DOT,     KC_3,       \
+    LOWER,      KC_K,       KC_U,       KC_P,       KC_4,       \
+    KC_SPC,     KC_X,       KC_I,       KC_Y,       KC_5,       \
+    KC_SPC,     KC_B,       KC_D,       KC_F,       KC_6,       \
+    KC_ENT,     KC_M,       KC_H,       KC_G,       KC_7,       \
+    KC_LEFT,    KC_W,       KC_T,       KC_C,       KC_8,       \
+    KC_DOWN,    KC_V,       KC_N,       KC_R,       KC_9,       \
+    KC_UP,      KC_Z,       KC_S,       KC_L,       KC_0,       \
     KC_RGHT,    KC_QUOT,    KC_MINS,    KC_EQL,     KC_BSPC     \
 )
 
@@ -95,16 +78,16 @@
 )
 
 #define KEYMAP_ADJUST LAYOUT_preonic_grid_vertical( \
-    _______,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    QWERTY,     ___X___,    ___X___,    RESET,      ___X___,    \
-    COLEMAK,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    DVORAK,     ___X___,    ___X___,    ___X___,    ___X___,    \
-    _______,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___,    \
-    ___X___,    ___X___,    ___X___,    ___X___,    ___X___     \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    QWERTY,     XXXXXXX,    XXXXXXX,    RESET,      XXXXXXX,    \
+    COLEMAK,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    DVORAK,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
 )
