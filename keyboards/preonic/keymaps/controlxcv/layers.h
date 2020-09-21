@@ -4,32 +4,32 @@
 
 #define KEYMAP_QWERTY LAYOUT_preonic_grid_vertical(             \
     RAISE,      KC_LSFT,    KC_TAB,     KC_BSLS,    KC_GRV,     \
-    KC_LCTL,    KC_QUOT,    KC_A,       KC_Q,       KC_1,       \
-    KC_LALT,    KC_Z,       KC_S,       KC_W,       KC_2,       \
-    KC_LGUI,    KC_X,       KC_D,       KC_E,       KC_3,       \
-    LOWER,      KC_C,       KC_F,       KC_R,       KC_4,       \
-    KC_SPC,     KC_V,       KC_G,       KC_T,       KC_5,       \
-    KC_SPC,     KC_B,       KC_H,       KC_Y,       KC_6,       \
-    KC_ENT,     KC_N,       KC_J,       KC_U,       KC_7,       \
-    KC_LEFT,    KC_M,       KC_K,       KC_I,       KC_8,       \
-    KC_DOWN,    KC_COMM,    KC_L,       KC_O,       KC_9,       \
-    KC_UP,      KC_DOT,     KC_SCLN,    KC_P,       KC_0,       \
-    KC_RGHT,    KC_SLSH,    KC_MINS,    KC_EQL,     KC_BSPC     \
+    KC_LCTL,    KC_Z,       KC_A,       KC_Q,       KC_1,       \
+    KC_LALT,    KC_X,       KC_S,       KC_W,       KC_2,       \
+    KC_LGUI,    KC_C,       KC_D,       KC_E,       KC_3,       \
+    LOWER,      KC_V,       KC_F,       KC_R,       KC_4,       \
+    KC_SPC,     KC_B,       KC_G,       KC_T,       KC_5,       \
+    KC_SPC,     KC_N,       KC_H,       KC_Y,       KC_6,       \
+    KC_ENT,     KC_M,       KC_J,       KC_U,       KC_7,       \
+    KC_LEFT,    KC_COMM,    KC_K,       KC_I,       KC_8,       \
+    KC_DOWN,    KC_DOT,     KC_L,       KC_O,       KC_9,       \
+    KC_UP,      KC_SLSH,    KC_SCLN,    KC_P,       KC_0,       \
+    KC_RGHT,    KC_QUOT,    KC_MINS,    KC_EQL,     KC_BSPC     \
 )
 
 #define KEYMAP_COLEMAK LAYOUT_preonic_grid_vertical(             \
     RAISE,      KC_LSFT,    KC_TAB,     KC_BSLS,    KC_GRV,     \
-    KC_LCTL,    KC_QUOT,    KC_A,       KC_Q,       KC_1,       \
-    KC_LALT,    KC_Z,       KC_R,       KC_W,       KC_2,       \
-    KC_LGUI,    KC_X,       KC_S,       KC_F,       KC_3,       \
-    LOWER,      KC_C,       KC_T,       KC_P,       KC_4,       \
-    KC_SPC,     KC_V,       KC_D,       KC_G,       KC_5,       \
-    KC_SPC,     KC_B,       KC_H,       KC_J,       KC_6,       \
-    KC_ENT,     KC_K,       KC_N,       KC_L,       KC_7,       \
-    KC_LEFT,    KC_M,       KC_E,       KC_U,       KC_8,       \
-    KC_DOWN,    KC_COMM,    KC_I,       KC_Y,       KC_9,       \
-    KC_UP,      KC_DOT,     KC_O,       KC_SCLN,    KC_0,       \
-    KC_RGHT,    KC_SLSH,    KC_MINS,    KC_EQL,     KC_BSPC     \
+    KC_LCTL,    KC_Z,       KC_A,       KC_Q,       KC_1,       \
+    KC_LALT,    KC_X,       KC_R,       KC_W,       KC_2,       \
+    KC_LGUI,    KC_C,       KC_S,       KC_F,       KC_3,       \
+    LOWER,      KC_V,       KC_T,       KC_P,       KC_4,       \
+    KC_SPC,     KC_B,       KC_D,       KC_G,       KC_5,       \
+    KC_SPC,     KC_K,       KC_H,       KC_J,       KC_6,       \
+    KC_ENT,     KC_M,       KC_N,       KC_L,       KC_7,       \
+    KC_LEFT,    KC_COMM,    KC_E,       KC_U,       KC_8,       \
+    KC_DOWN,    KC_DOT,     KC_I,       KC_Y,       KC_9,       \
+    KC_UP,      KC_SLSH,    KC_O,       KC_SCLN,    KC_0,       \
+    KC_RGHT,    KC_QUOT,    KC_MINS,    KC_EQL,     KC_BSPC     \
 )
 
 #define KEYMAP_DVORAK LAYOUT_preonic_grid_vertical(            \
