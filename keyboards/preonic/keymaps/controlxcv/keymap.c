@@ -10,8 +10,8 @@ enum preonic_layers {
     _COMMON,
     _LOWER = 8,
     _RAISE,
-    
-    _ADJUST = 14,
+    _LOCK = 13,
+    _ADJUST,
     _RESET
 };
 
@@ -30,6 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COMMON] = KEYMAP_COMMON,
     [_LOWER] = KEYMAP_LOWER,
     [_RAISE] = KEYMAP_RAISE,
+    [_LOCK] = KEYMAP_LOCK,
     [_ADJUST] = KEYMAP_ADJUST,
     [_RESET] = KEYMAP_RESET
 };
