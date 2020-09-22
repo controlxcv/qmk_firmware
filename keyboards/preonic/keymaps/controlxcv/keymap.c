@@ -15,11 +15,11 @@ enum preonic_layers {
 };
 
 enum preonic_keycodes {
-    QWERTY = SAFE_RANGE,
-    COLEMAK,
-    DVORAK,
-    LOWER,
-    RAISE
+    _KC_QWER = SAFE_RANGE,
+    _KC_COLE,
+    _KC_DVOR,
+    _KC_LOWR,
+    _KC_RISE
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
