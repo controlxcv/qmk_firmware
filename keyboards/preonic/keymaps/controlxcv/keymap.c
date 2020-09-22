@@ -4,13 +4,14 @@
 #include "_layers.h"
 
 enum preonic_layers {
-    _QWERTY,
+    _QWERTY = 0,
     _COLEMAK,
     _DVORAK,
     _COMMON,
-    _LOWER,
+    _LOWER = 8,
     _RAISE,
-    _ADJUST
+    _ADJUST,
+    _RESET = 15
 };
 
 enum preonic_keycodes {
@@ -28,7 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COMMON] = KEYMAP_COMMON,
     [_LOWER] = KEYMAP_LOWER,
     [_RAISE] = KEYMAP_RAISE,
-    [_ADJUST] = KEYMAP_ADJUST
+    [_ADJUST] = KEYMAP_ADJUST,
+    [_RESET] = KEYMAP_RESET
 };
 
 /* Local functions */
@@ -47,7 +49,7 @@ void keyboard_post_init_user(void) {
     layer_clear();
     default_layer_set(1U << _QWERTY);
     layer_on(_COMMON);
-    // clicky_off();
+    clicky_off();
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
