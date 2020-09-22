@@ -1,6 +1,7 @@
 #include QMK_KEYBOARD_H
 
-#include "layers.h"
+#include "_defs.h"
+#include "_layers.h"
 
 enum preonic_layers {
     _QWERTY,
@@ -30,12 +31,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_ADJUST] = KEYMAP_ADJUST
 };
 
+/* Local functions */
+
 void use_default_layer(uint8_t default_layer) {
 #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
-    float default_layer_songs[][16][2] = DEFAULT_LAYER_SONGS;
     PLAY_SONG(default_layer_songs[default_layer]);
 #endif
-    default_layer_set((1U << _COMMON) | (1U << default_layer));
+    default_layer_set(1U << default_layer);
+    layer_on(_COMMON);
+}
+
+/* QMK function overrides */
+
+void keyboard_post_init_user(void) {
+    layer_clear();
+    default_layer_set(1U << _QWERTY);
+    layer_on(_COMMON);
+    // clicky_off();
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {

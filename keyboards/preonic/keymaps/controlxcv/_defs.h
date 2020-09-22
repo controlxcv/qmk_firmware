@@ -1,5 +1,12 @@
 #pragma once
 
+#if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
+    extern float default_layer_songs[][16][2];
+#endif
+
+/* Make KC_NO easier on the eyes */
+#define ___X___ XXXXXXX
+
 /*
     This macro produces the same output as LAYOUT_ortho_5x12;
     it's just that it's written in code as if the keyboard were
@@ -8,7 +15,6 @@
 
     Note that this is rotation and not transposition.
 */
-
 #define LAYOUT_ortho_5x12_vertical( \
     k40, k30, k20, k10, k00, \
     k41, k31, k21, k11, k01, \
