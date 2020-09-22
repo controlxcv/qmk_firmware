@@ -10,8 +10,9 @@ enum preonic_layers {
     _COMMON,
     _LOWER = 8,
     _RAISE,
-    _ADJUST,
-    _RESET = 15
+    
+    _ADJUST = 14,
+    _RESET
 };
 
 enum preonic_keycodes {
