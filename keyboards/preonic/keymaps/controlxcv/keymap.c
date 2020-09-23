@@ -16,10 +16,7 @@ enum preonic_layers {
 };
 
 enum preonic_keycodes {
-    _KC_QWER = SAFE_RANGE,
-    _KC_COLE,
-    _KC_DVOR,
-    _KC_LOWR,
+    _KC_LOWR = SAFE_RANGE,
     _KC_RISE
 };
 
@@ -35,25 +32,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RSET] = KEYMAP_RSET
 };
 
-/* Local functions */
-
-void use_default_layer(uint8_t default_layer) {
-    default_layer_set(1U << default_layer);
-    layer_on(_COMM);
-}
-
 /* QMK functions */
 
 void keyboard_post_init_user(void) {
     layer_clear();
     default_layer_set(1U << _QWER);
-    layer_on(_COMM);
     clicky_off();
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
 #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
-    /* Play a tune when a keyboard layout is activated */
     if (layer_state_cmp(state, _QWER)) {
         PLAY_SONG(default_layer_songs[_QWER]);
     }
@@ -64,6 +52,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         PLAY_SONG(default_layer_songs[_DVOR]);
     }
 #endif
+    layer_on(_COMM);
     return state;
 }
 
@@ -73,24 +62,6 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case _KC_QWER:
-            if (record->event.pressed) {
-                use_default_layer(_QWER);
-            }
-            return false;
-            break;
-        case _KC_COLE:
-            if (record->event.pressed) {
-                use_default_layer(_COLE);
-            }
-            return false;
-            break;
-        case _KC_DVOR:
-            if (record->event.pressed) {
-                use_default_layer(_DVOR);
-            }
-            return false;
-            break;
         case _KC_LOWR:
             if (record->event.pressed) {
                 layer_on(_LOWR);
