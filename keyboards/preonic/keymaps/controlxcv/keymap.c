@@ -8,8 +8,8 @@ enum preonic_layers {
     _COLEMAK,
     _DVORAK,
     _COMMON,
-    _LOWER = 8,
-    _RAISE,
+    _FUNC1 = 8,
+    _FUNC2,
     _LOCK = 13,
     _CONFIG,
     _RESET
@@ -19,8 +19,8 @@ enum preonic_keycodes {
     _KC_QWERTY = SAFE_RANGE,
     _KC_COLMAK,
     _KC_DVORAK,
-    _KC_LOWER,
-    _KC_RAISE
+    _KC_FUNC1,
+    _KC_FUNC2
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -28,8 +28,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = KEYMAP_COLEMAK,
     [_DVORAK] = KEYMAP_DVORAK,
     [_COMMON] = KEYMAP_COMMON,
-    [_LOWER] = KEYMAP_LOWER,
-    [_RAISE] = KEYMAP_RAISE,
+    [_FUNC1] = KEYMAP_FUNC1,
+    [_FUNC2] = KEYMAP_FUNC2,
     [_LOCK] = KEYMAP_LOCK,
     [_CONFIG] = KEYMAP_CONFIG,
     [_RESET] = KEYMAP_RESET
@@ -90,23 +90,23 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case _KC_LOWER:
+        case _KC_FUNC1:
             if (record->event.pressed) {
-                layer_on(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _CONFIG);
+                layer_on(_FUNC1);
+                update_tri_layer(_FUNC1, _FUNC2, _CONFIG);
             } else {
-                layer_off(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _CONFIG);
+                layer_off(_FUNC1);
+                update_tri_layer(_FUNC1, _FUNC2, _CONFIG);
             }
             return false;
             break;
-        case _KC_RAISE:
+        case _KC_FUNC2:
             if (record->event.pressed) {
-                layer_on(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _CONFIG);
+                layer_on(_FUNC2);
+                update_tri_layer(_FUNC1, _FUNC2, _CONFIG);
             } else {
-                layer_off(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _CONFIG);
+                layer_off(_FUNC2);
+                update_tri_layer(_FUNC1, _FUNC2, _CONFIG);
             }
             return false;
             break;
