@@ -16,8 +16,7 @@ enum preonic_layers {
 };
 
 enum preonic_keycodes {
-    _KC_LOWR = SAFE_RANGE,
-    _KC_RISE
+    _KC_NULL = SAFE_RANGE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -36,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) {
     layer_clear();
-    default_layer_set(1U << _QWER);
+    default_layer_set(1UL << _QWER);
     clicky_off();
 }
 
@@ -57,28 +56,14 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return state;
+    return update_tri_layer_state(state, _LOWR, _RISE, _CONF);
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case _KC_LOWR:
+        case _KC_NULL:
             if (record->event.pressed) {
-                layer_on(_LOWR);
-                update_tri_layer(_LOWR, _RISE, _CONF);
             } else {
-                layer_off(_LOWR);
-                update_tri_layer(_LOWR, _RISE, _CONF);
-            }
-            return false;
-            break;
-        case _KC_RISE:
-            if (record->event.pressed) {
-                layer_on(_RISE);
-                update_tri_layer(_LOWR, _RISE, _CONF);
-            } else {
-                layer_off(_RISE);
-                update_tri_layer(_LOWR, _RISE, _CONF);
             }
             return false;
             break;
