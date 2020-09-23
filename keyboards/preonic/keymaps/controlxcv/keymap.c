@@ -11,7 +11,7 @@ enum preonic_layers {
     _LOWER = 8,
     _RAISE,
     _LOCK = 13,
-    _ADJUST,
+    _CONFIG,
     _RESET
 };
 
@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_LOWER] = KEYMAP_LOWER,
     [_RAISE] = KEYMAP_RAISE,
     [_LOCK] = KEYMAP_LOCK,
-    [_ADJUST] = KEYMAP_ADJUST,
+    [_CONFIG] = KEYMAP_CONFIG,
     [_RESET] = KEYMAP_RESET
 };
 
@@ -42,16 +42,32 @@ void use_default_layer(uint8_t default_layer) {
     PLAY_SONG(default_layer_songs[default_layer]);
 #endif
     default_layer_set(1U << default_layer);
-    layer_on(_COMMON);
+    //layer_on(_COMMON);
 }
 
-/* QMK function overrides */
+/* QMK functions */
 
 void keyboard_post_init_user(void) {
     layer_clear();
     default_layer_set(1U << _QWERTY);
     layer_on(_COMMON);
     clicky_off();
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+
+    // if (layer_state_cmp(state, _COMMON)) {
+    //     PLAY_SONG(default_layer_songs[_QWERTY]);
+    // }
+
+#if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
+    /* Play a tune when a keyboard layout is activated */
+    // if (layer_state_cmp(state, _QWERTY)) {
+    //     PLAY_SONG(default_layer_songs[_QWERTY]);
+    // }
+#endif
+
+    return state;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -77,20 +93,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case _KC_LOWER:
             if (record->event.pressed) {
                 layer_on(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                update_tri_layer(_LOWER, _RAISE, _CONFIG);
             } else {
                 layer_off(_LOWER);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                update_tri_layer(_LOWER, _RAISE, _CONFIG);
             }
             return false;
             break;
         case _KC_RAISE:
             if (record->event.pressed) {
                 layer_on(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                update_tri_layer(_LOWER, _RAISE, _CONFIG);
             } else {
                 layer_off(_RAISE);
-                update_tri_layer(_LOWER, _RAISE, _ADJUST);
+                update_tri_layer(_LOWER, _RAISE, _CONFIG);
             }
             return false;
             break;
