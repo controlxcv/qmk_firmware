@@ -24,10 +24,11 @@
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
 )
 
+// #define _KC_SH_SP RSFT_T(KC_SPC)
 #define KEYMAP_COMM LAYOUT_preonic_grid( \
     KC_GRV,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_BSPC,    \
-    KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL,     \
-    KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS,    \
+    KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL,     \
+    KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS,    \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT,    \
     MO(_LOWR),  KC_LCTL,    KC_LALT,    KC_LGUI,    MO(_RISE),  KC_SPC,     KC_SPC,     KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT     \
 )
@@ -45,14 +46,14 @@
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_LANG2,   \
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_LANG1,   \
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    \
-    _______,    _______,    _______,    _______,    _______,    KC_MPLY,    KC_MPLY,    KC_MSTP,    KC_MPRV,    KC_VOLU,    KC_VOLD,    KC_MNXT     \
+    _______,    _______,    _______,    _______,    _______,    KC_MPLY,    KC_MPLY,    KC_MSTP,    KC_MPRV,    KC_VOLD,    KC_VOLU,    KC_MNXT     \
 )
 
 #define KEYMAP_CONF LAYOUT_preonic_grid( \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    CK_TOGG,    DF(_QWER),  \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    CK_TOGG,    XXXXXXX,    \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_QWER),  \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_COLE),  \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_DVOR),  \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
 )
 
@@ -65,9 +66,9 @@
 )
 
 #define KEYMAP_RSET LAYOUT_preonic_grid( \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RESET,      \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    EEP_RST,    RESET,      \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
-    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    EEP_RST,    EEP_RST,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
 )
