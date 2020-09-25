@@ -16,7 +16,7 @@ enum preonic_layers {
 };
 
 enum preonic_keycodes {
-    _KC_NULL = SAFE_RANGE,
+    KC_NULL = SAFE_RANGE,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -59,9 +59,22 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _LOWR, _RISE, _CONF);
 }
 
+void oneshot_mods_changed_user(uint8_t mods) {
+  if (mods & MOD_MASK_SHIFT) {
+  }
+  if (mods & MOD_MASK_CTRL) {
+  }
+  if (mods & MOD_MASK_ALT) {
+  }
+  if (mods & MOD_MASK_GUI) {
+  }
+  if (!mods) {
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case _KC_NULL:
+        case KC_NULL:
             if (record->event.pressed) {
             } else {
             }

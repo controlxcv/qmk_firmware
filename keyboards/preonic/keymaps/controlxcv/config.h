@@ -22,3 +22,5 @@
 
 // do-re-mi-fa-so
 // #define AUDIO_CLICKY_FREQ_RANDOMNESS 0.4983f
+
+#define ONESHOT_TAP_TOGGLE 2
