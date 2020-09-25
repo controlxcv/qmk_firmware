@@ -20,22 +20,23 @@ enum preonic_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    /* Default layer: keyboard layouts */
     [_QWER] = KEYMAP_QWER,
     [_COLE] = KEYMAP_COLE,
     [_DVOR] = KEYMAP_DVOR,
+    /* Default layer: common keys */
     [_COMM] = KEYMAP_COMM,
+    /* Alternate keys */
     [_LOWR] = KEYMAP_LOWR,
     [_RISE] = KEYMAP_RISE,
+    /* Key lock */
     [_LOCK] = KEYMAP_LOCK,
+    /* Configuration */
     [_CONF] = KEYMAP_CONF,
     [_RSET] = KEYMAP_RSET
 };
 
-/* QMK functions */
-
 void keyboard_post_init_user(void) {
-    layer_clear();
-    default_layer_set(1UL << _QWER);
     clicky_off();
 }
 
@@ -51,8 +52,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         PLAY_SONG(default_layer_songs[_DVOR]);
     }
 #endif
-    layer_on(_COMM);
-    return state;
+    return (state | (1UL << _COMM));
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
