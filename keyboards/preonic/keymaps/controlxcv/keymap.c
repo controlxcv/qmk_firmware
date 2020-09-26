@@ -16,7 +16,8 @@ enum preonic_layers {
 };
 
 enum preonic_keycodes {
-    KC_NULL = SAFE_RANGE,
+    KC_MCTL = SAFE_RANGE,
+    KC_LPAD
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
