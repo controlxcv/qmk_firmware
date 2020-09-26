@@ -29,7 +29,7 @@
     KC_LBRC,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL,     \
     KC_RBRC,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS,    \
     OSM_LSFT,   _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT,    \
-    MO(_LOWR),  OSM_LCTL,   OSM_LALT,   OSM_LGUI,   MO(_RISE),  KC_SPC,     KC_SPC,     KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT     \
+    MO(_LOWR),  OSM_LCTL,   OSM_LALT,   OSM_LGUI,   MO(_RISE),  KC_SPC,     KC_SPC,     KC_BSPC,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT     \
 )
 
 #define KEYMAP_RISE LAYOUT_preonic_grid( \
@@ -37,13 +37,13 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_F11,     \
     KC_CAPS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_F12,     \
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_INS,     \
-    _______,    _______,    _______,    _______,    _______,    KC_BSPC,    KC_BSPC,    KC_DEL,     KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END      \
+    _______,    _______,    _______,    _______,    _______,    KC_ENT,     KC_ENT,     KC_DEL,     KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END      \
 )
 
 #define KEYMAP_LOWR LAYOUT_preonic_grid( \
-    KC_PWR,     KC_LANG1,   KC_LANG2,   KC_LANG3,   KC_LANG4,   KC_LANG5,   _______,    _______,    KC_PSCR,    KC_SLCK,    KC_PAUS,    KC_EJCT,    \
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,   \
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    \
+    KC_PWR,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PSCR,    KC_SLCK,    KC_PAUS,    KC_EJCT,    \
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_LANG1,   \
+    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_LANG2,   \
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_APP,     \
     _______,    _______,    _______,    _______,    _______,    KC_MPLY,    KC_MPLY,    KC_MSTP,    KC_MPRV,    KC_VOLD,    KC_VOLU,    KC_MNXT     \
 )
@@ -57,11 +57,11 @@
 )
 
 #define KEYMAP_CONF LAYOUT_preonic_grid( \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    TG(_LOCK),  \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
     XXXXXXX,    DF(_QWER),  DF(_COLE),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
     XXXXXXX,    CK_TOGG,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    \
-    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    TG(_LOCK),  TG(_LOCK),  MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX     \
 )
 
 #define KEYMAP_RSET LAYOUT_preonic_grid( \
