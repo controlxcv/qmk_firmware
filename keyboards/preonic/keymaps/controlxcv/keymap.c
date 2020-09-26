@@ -16,7 +16,8 @@ enum preonic_layers {
 };
 
 enum preonic_keycodes {
-    KC_MCTL = SAFE_RANGE,
+    KC_NULL = SAFE_RANGE,
+    KC_MCTL,
     KC_LPAD
 };
 
