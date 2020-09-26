@@ -33,7 +33,7 @@
 )
 
 #define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
-    KC_ESC,     KC_VOLD,    KC_VOLU,    KC_MCTL,    KC_LPAD,    KC_MPRV,    KC_MSTP,    KC_MPLY,    KC_MNXT,    KC_LANG1,   KC_LANG2,   KC_HOME, \
+    KC_ESC,     KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_MPLY,    KC_MPRV,    KC_MNXT,    KC_MCTL,    KC_LPAD,    KC_LANG1,   KC_LANG2,   KC_HOME, \
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PGUP, \
     KC_CAPS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_PGDN, \
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_END, \
