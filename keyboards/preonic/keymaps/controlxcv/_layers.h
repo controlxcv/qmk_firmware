@@ -32,14 +32,6 @@
     MO(_LOWR),  KC_LCTL,    KC_LALT,    KC_LGUI,    MO(_RISE),        KC_SPC,           KC_BSPC,    KC_LEFT,    KC_RGHT,    KC_DOWN,    KC_UP \
 )
 
-#define KEYMAP_FUNC LAYOUT_preonic_1x2uC( \
-    KC_PWR,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_EJCT, \
-    KC_F11,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_F13, \
-    KC_F12,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_F14, \
-    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_F15, \
-    _______,    _______,    _______,    _______,    _______,          _______,          KC_F16,     KC_F17,     KC_F18,     KC_F19,     KC_F20 \
-)
-
 #define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
     KC_LANG2,   XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LBRC,    KC_RBRC,    KC_MUTE, \
     KC_LANG1,   _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_VOLU, \
