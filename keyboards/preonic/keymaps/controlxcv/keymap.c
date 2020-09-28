@@ -8,6 +8,7 @@ enum preonic_layers {
     _COLE,
     _DVOR,
     _COMM = 8,
+    _FUNC,
     _LOWR,
     _RISE,
     _LOCK = 13,
