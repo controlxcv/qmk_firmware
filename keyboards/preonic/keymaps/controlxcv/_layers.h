@@ -29,7 +29,7 @@
     KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_QUOT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_ENT, \
-    MO(_LOWR),  KC_LCTL,    KC_LALT,    KC_LGUI,    MO(_RISE),        KC_SPC,           KC_BSPC,    KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
+    MO(_LOWR),  KC_LCTL,    KC_LALT,    KC_LGUI,    MO(_RISE),        KC_SPC,           KC_BSPC,    KC_LEFT,    KC_RGHT,    KC_DOWN,    KC_UP \
 )
 
 #define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
