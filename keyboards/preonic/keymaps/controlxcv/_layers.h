@@ -25,11 +25,11 @@
 )
 
 #define KEYMAP_COMM LAYOUT_preonic_1x2uC( \
-    KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_GRV, \
+    KC_GRV,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_BSLS, \
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
-    KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
+    KC_ESC,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, \
-    MO(_LOWR),  KC_LCTL,    KC_LALT,    KC_LGUI,    MO(_RISE),        KC_SPC,           KC_LEFT,    KC_RGHT,    KC_DOWN,    KC_UP,      _______ \
+    MO(_LOWR),  KC_LCTL,    KC_LALT,    KC_LGUI,    MO(_RISE),        KC_SPC,           KC_LEFT,    KC_RGHT,    KC_DOWN,    KC_UP,      KC_MCTL \
 )
 
 #define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
@@ -37,7 +37,7 @@
     KC_LANG1,   _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_VOLU, \
     KC_CAPS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_VOLD, \
     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MPLY, \
-    _______,    _______,    _______,    _______,    _______,          KC_ENT,           KC_BSPC,    KC_DEL,     KC_MPRV,    KC_MNXT,    _______ \
+    _______,    _______,    _______,    _______,    _______,          KC_ENT,           KC_BSPC,    KC_DEL,     KC_MPRV,    KC_MNXT,    KC_LPAD \
 )
 
 #define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
