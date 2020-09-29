@@ -4,13 +4,13 @@
 #include "_layers.h"
 
 enum preonic_layers {
-    _QWER = 0,
+    _QWER,
     _COLE,
     _DVOR,
-    _COMM = 8,
+    _COMM,
     _LOWR,
     _RISE,
-    _LOCK = 13,
+    _LOCK,
     _CONF,
     _RSET
 };
@@ -22,18 +22,13 @@ enum preonic_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* Default layer: keyboard layouts */
     [_QWER] = KEYMAP_QWER,
     [_COLE] = KEYMAP_COLE,
     [_DVOR] = KEYMAP_DVOR,
-    /* Default layer: common keys */
     [_COMM] = KEYMAP_COMM,
-    /* Alternate keys */
     [_LOWR] = KEYMAP_LOWR,
     [_RISE] = KEYMAP_RISE,
-    /* Key lock */
     [_LOCK] = KEYMAP_LOCK,
-    /* Configuration */
     [_CONF] = KEYMAP_CONF,
     [_RSET] = KEYMAP_RSET
 };
