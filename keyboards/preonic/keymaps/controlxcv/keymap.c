@@ -1,7 +1,6 @@
 #include QMK_KEYBOARD_H
 
-#include "_defs.h"
-#include "_layers.h"
+#include "layout.h"
 
 enum preonic_layers {
     _QWER,
@@ -36,6 +35,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void keyboard_post_init_user(void) {
     clicky_off();
 }
+
+#if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
+    extern float default_layer_songs[][16][2];
+#endif
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
 #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
