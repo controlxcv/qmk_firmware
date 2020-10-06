@@ -2,7 +2,29 @@
 
 #include "layout.h"
 
-enum preonic_layers {
+/*----------------------------------------------------------
+ * Key codes
+ * https://www.usb.org/sites/default/files/hut1_2.pdf
+ */
+
+#define KC_MCON KC_SHOW_ALL_WINDOWS
+#define KC_LPAD KC_SHOW_ALL_APPS
+
+enum my_keycodes {
+    KC_SHOW_ALL_WINDOWS = SAFE_RANGE,
+    KC_SHOW_ALL_APPS
+};
+
+enum my_consumer_usages {
+    AC_SHOW_ALL_WINDOWS = 0x29F,
+    AC_SHOW_ALL_APPS    = 0x2A0
+};
+
+/*----------------------------------------------------------
+ * Layers
+ */
+
+enum my_layers {
     _QWER,
     _COLE,
     _DVOR,
@@ -13,12 +35,6 @@ enum preonic_layers {
     _CONF,
     _RSET
 };
-
-// enum preonic_keycodes {
-//     KC_NULL = SAFE_RANGE,
-//     KC_MCTL,
-//     KC_LPAD
-// };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWER] = KEYMAP_QWER,
@@ -31,6 +47,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_CONF] = KEYMAP_CONF,
     [_RSET] = KEYMAP_RSET
 };
+
+/*----------------------------------------------------------
+ * Functions
+ */
 
 // void keyboard_post_init_user(void) {
 // }
@@ -58,14 +78,27 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _LOWR, _RISE, _CONF);
 }
 
-// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-//     switch (keycode) {
-//         case KC_NULL:
-//             if (record->event.pressed) {
-//             } else {
-//             }
-//             return false;
-//             break;
-//       }
-//     return true;
-// };
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+
+        case KC_SHOW_ALL_WINDOWS:
+            if (record->event.pressed) {
+                host_consumer_send(AC_SHOW_ALL_WINDOWS);
+            } else {
+                host_consumer_send(0);
+            }
+            return false; /* Skip all further processing of this key */
+
+        case KC_SHOW_ALL_APPS:
+            if (record->event.pressed) {
+                host_consumer_send(AC_SHOW_ALL_APPS);
+            } else {
+                host_consumer_send(0);
+            }
+            return false; /* Skip all further processing of this key */
+
+        default:
+            return true; /* Process all other keycodes normally */
+
+    }
+}
