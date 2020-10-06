@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-#include "layout.h"
+#include "_keymaps.h"
 
 /*----------------------------------------------------------
  * Key codes
