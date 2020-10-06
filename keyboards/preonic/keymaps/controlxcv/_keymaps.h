@@ -61,7 +61,7 @@
     XXXXXXX,    DF(_QWER),  DF(_COLE),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    _______,    _______,    XXXXXXX,    XXXXXXX,    TG(_LOCK),        XXXXXXX,          MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+    _______,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          TG(_LOCK),        MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
 
 #define KEYMAP_RSET LAYOUT_preonic_1x2uC( \
