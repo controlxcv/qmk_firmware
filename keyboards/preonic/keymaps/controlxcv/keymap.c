@@ -14,11 +14,11 @@ enum preonic_layers {
     _RSET
 };
 
-enum preonic_keycodes {
-    KC_NULL = SAFE_RANGE,
-    KC_MCTL,
-    KC_LPAD
-};
+// enum preonic_keycodes {
+//     KC_NULL = SAFE_RANGE,
+//     KC_MCTL,
+//     KC_LPAD
+// };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWER] = KEYMAP_QWER,
@@ -32,9 +32,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RSET] = KEYMAP_RSET
 };
 
-void keyboard_post_init_user(void) {
-    clicky_off();
-}
+// void keyboard_post_init_user(void) {
+// }
 
 #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
     extern float default_layer_songs[][16][2];
@@ -59,27 +58,14 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _LOWR, _RISE, _CONF);
 }
 
-void oneshot_mods_changed_user(uint8_t mods) {
-  if (mods & MOD_MASK_SHIFT) {
-  }
-  if (mods & MOD_MASK_CTRL) {
-  }
-  if (mods & MOD_MASK_ALT) {
-  }
-  if (mods & MOD_MASK_GUI) {
-  }
-  if (!mods) {
-  }
-}
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case KC_NULL:
-            if (record->event.pressed) {
-            } else {
-            }
-            return false;
-            break;
-      }
-    return true;
-};
+// bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+//     switch (keycode) {
+//         case KC_NULL:
+//             if (record->event.pressed) {
+//             } else {
+//             }
+//             return false;
+//             break;
+//       }
+//     return true;
+// };
