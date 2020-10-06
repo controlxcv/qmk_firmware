@@ -29,7 +29,7 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_BSPC,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT, \
-    MO(_LOWR),  MO(_RISE),  KC_LCTL,    KC_LOPT,  KC_LCMD,            KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
+    MO(_LOWR),  MO(_RISE),  KC_LCTL,    KC_LOPT,  KC_LCMD,            KC_SPC,           KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,     KC_ENT \
 )
 
 #define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
@@ -37,7 +37,7 @@
     KC_APP,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LANG1, \
     KC_DEL,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LANG2, \
     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_INS, \
-    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END \
+    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     XXXXXXX \
 )
 
 #define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
@@ -45,7 +45,7 @@
     KC_F11,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F14, \
     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F15, \
     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F16, \
-    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_F17,     KC_F18,     KC_F19,     KC_F20 \
+    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          KC_F17,     KC_F18,     KC_F19,     KC_F20,    XXXXXXX \
 )
 
 #define KEYMAP_LOCK LAYOUT_preonic_1x2uC( \
