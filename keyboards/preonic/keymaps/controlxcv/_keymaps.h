@@ -29,10 +29,10 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_BSPC,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT, \
-    KC_LCTL,    KC_LOPT,    MO(_LOWR),  MO(_RISE),  KC_LCMD,          KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
+    MO(_LOWR),  MO(_RISE),  KC_LCTL,    KC_LOPT,  KC_LCMD,            KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
 )
 
-#define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
+#define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
     KC_ESC,     KC_MCON,    KC_LPAD,    KC_MRWD,    KC_MPLY,    KC_MFFD,    KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_LBRC,    KC_RBRC,    KC_CAPS, \
     KC_APP,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LANG1, \
     KC_DEL,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LANG2, \
@@ -40,7 +40,7 @@
     _______,    _______,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END \
 )
 
-#define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
+#define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
     KC_PWR,     KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F13, \
     KC_F11,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F14, \
     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F15, \
@@ -53,7 +53,7 @@
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    XXXXXXX,    _______,    _______,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+    _______,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
 
 #define KEYMAP_CONF LAYOUT_preonic_1x2uC( \
@@ -61,7 +61,7 @@
     XXXXXXX,    DF(_QWER),  DF(_COLE),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    XXXXXXX,    _______,    _______,    TG(_LOCK),        XXXXXXX,          MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+    _______,    _______,    XXXXXXX,    XXXXXXX,    TG(_LOCK),        XXXXXXX,          MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
 
 #define KEYMAP_RSET LAYOUT_preonic_1x2uC( \
@@ -69,5 +69,5 @@
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    XXXXXXX,    _______,    _______,    XXXXXXX,          XXXXXXX,          _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+    _______,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
