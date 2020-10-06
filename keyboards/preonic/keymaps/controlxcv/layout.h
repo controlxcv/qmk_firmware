@@ -29,7 +29,7 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_BSPC,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT, \
-    KC_LCTL,    KC_LOPT,    MO(_LOWR),  MO(_RISE),  KC_LCMD,          KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
+    KC_LCTL,    KC_LOPT,    MO(_LOWR),  MO(_RISE),  KC_LCMD,          KC_SPC,           KC_ENT,     KC_LEFT,    KC_RGHT,    KC_DOWN,    KC_UP \
 )
 
 #define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
@@ -37,7 +37,7 @@
     KC_APP,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LANG1, \
     KC_DEL,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LANG2, \
     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_INS, \
-    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END \
+    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_HOME,    KC_END,     KC_PGDN,    KC_PGUP \
 )
 
 #define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
@@ -66,7 +66,7 @@
 
 #define KEYMAP_RSET LAYOUT_preonic_1x2uC( \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RESET, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    EEP_RST, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    _______,    _______,    XXXXXXX,          XXXXXXX,          _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
