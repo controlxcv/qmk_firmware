@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 
+#include "_diagnostics.h"
 #include "_keymaps.h"
 
 /*----------------------------------------------------------
