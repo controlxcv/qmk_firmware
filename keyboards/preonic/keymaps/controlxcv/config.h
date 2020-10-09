@@ -10,4 +10,5 @@
 #endif
 
 #define NO_MUSIC_MODE
-#define FORCE_NKRO
+
+// #define FORCE_NKRO
