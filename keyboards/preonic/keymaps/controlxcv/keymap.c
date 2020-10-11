@@ -53,8 +53,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Functions
  */
 
-// void keyboard_post_init_user(void) {
-// }
+void keyboard_post_init_user(void) {
+
+#if defined(RGBLIGHT_ENABLE)
+    rgblight_enable();
+#if defined(RGBLIGHT_EFFECT_RAINBOW_SWIRL)
+    rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);
+#else
+    rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+#endif /* RGBLIGHT_EFFECT_RAINBOW_SWIRL */
+#endif /* RGBLIGHT_ENABLE */
+
+}
 
 #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
     extern float default_layer_songs[][16][2];
