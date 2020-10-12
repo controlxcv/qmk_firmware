@@ -32,8 +32,8 @@ enum my_layers {
     _COMM,
     _LOWR,
     _RISE,
-    _LOCK,
     _CONF,
+    _LOCK,
     _RSET
 };
 
