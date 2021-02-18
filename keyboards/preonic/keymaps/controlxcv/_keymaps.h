@@ -24,22 +24,22 @@
     KC_LCTL,    KC_LCMD,    KC_LOPT,    MO(_FUNC),  MO(_LOWR),        KC_SPC,           MO(_RISE),  KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
 )
 
-// Navigation and multimedia keys - emulates Apple keyboards
-#define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
-    KC_BRID,    KC_BRIU,    KC_MCON,    KC_LPAD,    RGB_VAD,    RGB_VAI,    KC_MRWD,    KC_MPLY,    KC_MFFD,    KC_MUTE,    KC_VOLD,    KC_VOLU, \
-    KC_INS,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_PSCR,    KC_SLCK,    KC_PAUS,    _______, \
-    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END \
-)
-
 // Keys used for typing - enables single hand typing for common keys, and also macros
-#define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
+#define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_MINS,    KC_EQL, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_GRV,     KC_QUOT,    KC_BSLS,    _______, \
     _______,    _______,    _______,    _______,    _______,          XXXXXXX,          _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+)
+
+// Navigation and multimedia keys - emulates Apple keyboards
+#define KEYMAP_RISE LAYOUT_preonic_1x2uC( \
+    KC_BRID,    KC_BRIU,    KC_MCON,    KC_LPAD,    RGB_VAD,    RGB_VAI,    KC_MRWD,    KC_MPLY,    KC_MFFD,    KC_MUTE,    KC_VOLD,    KC_VOLU, \
+    KC_INS,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_DEL, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_PSCR,    KC_SLCK,    KC_PAUS,    _______, \
+    _______,    _______,    _______,    _______,    _______,          XXXXXXX,          _______,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END \
 )
 
 // Function and lock keys
