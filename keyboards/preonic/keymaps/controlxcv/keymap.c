@@ -28,10 +28,10 @@ enum my_consumer_usages {
 enum my_layers {
     _QWER,
     _COLE,
-    _DVOR,
     _COMM,
     _LOWR,
     _RISE,
+    _FUNC,
     _LOCK,
     _CONF,
     _RSET
@@ -40,10 +40,10 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWER] = KEYMAP_QWER,
     [_COLE] = KEYMAP_COLE,
-    [_DVOR] = KEYMAP_DVOR,
     [_COMM] = KEYMAP_COMM,
     [_LOWR] = KEYMAP_LOWR,
     [_RISE] = KEYMAP_RISE,
+    [_FUNC] = KEYMAP_FUNC,
     [_LOCK] = KEYMAP_LOCK,
     [_CONF] = KEYMAP_CONF,
     [_RSET] = KEYMAP_RSET
@@ -77,9 +77,6 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
     }
     else if (layer_state_cmp(state, _COLE)) {
         PLAY_SONG(default_layer_songs[_COLE]);
-    }
-    else if (layer_state_cmp(state, _DVOR)) {
-        PLAY_SONG(default_layer_songs[_DVOR]);
     }
 #endif
     return (state | (1UL << _COMM));
