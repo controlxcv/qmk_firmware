@@ -24,7 +24,7 @@
     KC_LCTL,    KC_LCMD,    KC_LOPT,    MO(_FUNC),  MO(_LOWR),        KC_SPC,           MO(_RISE),  KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT \
 )
 
-// Keys used for typing - enables single hand typing for common keys, and also macros
+// Keys used for typing
 #define KEYMAP_LOWR LAYOUT_preonic_1x2uC( \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_MINS,    KC_EQL, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
