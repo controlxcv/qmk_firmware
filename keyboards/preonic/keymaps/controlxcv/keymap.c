@@ -24,8 +24,8 @@
  */
 
 enum my_layers {
-    _QWER,
     _COLE,
+    _QWER,
     _DVOR,
     _COMM,
     _OVER,
@@ -35,8 +35,8 @@ enum my_layers {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_QWER] = KEYMAP_QWER,
     [_COLE] = KEYMAP_COLE,
+    [_QWER] = KEYMAP_QWER,
     [_DVOR] = KEYMAP_DVOR,
     [_COMM] = KEYMAP_COMM,
     [_OVER] = KEYMAP_OVER,
@@ -52,20 +52,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void keyboard_post_init_user(void) {
     #if defined(RGBLIGHT_ENABLE)
         rgblight_enable();
-        #if defined(RGBLIGHT_EFFECT_RAINBOW_SWIRL)
-            rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);
-        #else
-            rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
-        #endif /* RGBLIGHT_EFFECT_RAINBOW_SWIRL */
+        rgblight_sethsv(HSV_WHITE);
+        // #if defined(RGBLIGHT_EFFECT_RAINBOW_SWIRL)
+        //     rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL);
+        // #else
+        //     rgblight_mode(RGBLIGHT_MODE_STATIC_LIGHT);
+        // #endif /* RGBLIGHT_EFFECT_RAINBOW_SWIRL */
     #endif /* RGBLIGHT_ENABLE */
 }
 
-#if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
-    extern float default_layer_songs[][16][2];
-#endif
-
 layer_state_t default_layer_state_set_user(layer_state_t state) {
 #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
+    extern float default_layer_songs[][16][2];
     if (layer_state_cmp(state, _COLE)) {
         PLAY_SONG(default_layer_songs[_COLE]);
     }
