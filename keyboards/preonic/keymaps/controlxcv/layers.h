@@ -24,8 +24,6 @@
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
 
-#define KC_RAISE MO(_OVER)
-#define KC_LOWER MO(_FUNC)
 #define KC_SYS_L KC_LGUI
 #define KC_SYS_R KC_LCTL
 #define KEYMAP_COMM LAYOUT_preonic_1x2uC( \
@@ -33,7 +31,7 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT, \
-    KC_RAISE,   KC_LOWER,   KC_SYS_L,   KC_LALT,    KC_SYS_R,         KC_SPC,           KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_ENT \
+    MO(_OVER),  MO(_FUNC),  KC_LALT,    KC_SYS_L,   KC_SYS_R,         KC_SPC,           KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_ENT \
 )
 
 #define KEYMAP_OVER LAYOUT_preonic_1x2uC( \
@@ -44,27 +42,27 @@
     _______,    XXXXXXX,    _______,    _______,    _______,          KC_MPLY,          KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     KC_INS \
 )
 
-// QMK functions
-#define KEYMAP_FUNC LAYOUT_preonic_1x2uC( \
-    MO(_RSET),  DF(_QWER),  DF(_COLE),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_TOG, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_VAI, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_VAD, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          TG(_LOCK),        XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
-)
-
 // Key lock
 #define KEYMAP_LOCK LAYOUT_preonic_1x2uC( \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          _______,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
+)
+
+// QMK functions
+#define KEYMAP_FUNC LAYOUT_preonic_1x2uC( \
+    MO(_RSET),  DF(_QWER),  DF(_COLE),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_TOG, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAI, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
+    XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          TG(_LOCK),        RGB_HUD,    RGB_VAD,    RGB_VAI,    RGB_HUI,    XXXXXXX \
 )
 
 // Reset
 #define KEYMAP_RSET LAYOUT_preonic_1x2uC( \
-    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_T, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
