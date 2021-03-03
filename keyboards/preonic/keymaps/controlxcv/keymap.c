@@ -49,6 +49,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Functions
  */
 
+float eeprom_reset_song[][2] = SONG(STARTUP_SOUND);
+void eeconfig_init_user(void) {
+    eeconfig_update_rgblight_default();
+    rgblight_mode(RGBLIGHT_DEFAULT_MODE);
+    default_layer_or(1UL << _COMM);
+
+    #if defined(AUDIO_ENABLE)
+        PLAY_SONG(eeprom_reset_song);
+    #endif /* AUDIO_ENABLE */
+}
+
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
         extern float default_layer_songs[][16][2];
@@ -61,7 +72,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         else if (layer_state_cmp(state, _DVOR)) {
             PLAY_SONG(default_layer_songs[_DVOR]);
         }
-    #endif /* AUDIO_ENABLE */
+    #endif /* AUDIO_ENABLE && DEFAULT_LAYER_SONGS */
     return (state | (1UL << _COMM));
 }
 
