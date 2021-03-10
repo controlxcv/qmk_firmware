@@ -26,7 +26,7 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_DEL, \
     KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_COMM,    KC_DOT,     KC_SLSH,    KC_RSFT, \
-    KC_SYS_1,   KC_SYS_2,   KC_SYS_3,   KC_SYS_4,   KC_SYS_5,        KC_SPC,            KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT,    KC_ENT \
+    KC_SYS_1,   KC_SYS_2,   KC_SYS_3,   KC_SYS_4,   KC_SYS_5,        KC_SPC,            KC_ENT,     KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
 )
 
 #define KEYMAP_OVER LAYOUT_preonic_1x2uC( \
@@ -34,7 +34,7 @@
     KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_CLCK, \
     KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     _______,    KC_LANG1,   KC_LANG2,   KC_VOLD,    KC_VOLU,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LBRC,    KC_RBRC,    KC_GRV,     _______, \
-    _______,    _______,    _______,    XXXXXXX,    _______,          XXXXXXX,          KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END,     KC_INS \
+    _______,    _______,    _______,    XXXXXXX,    _______,          XXXXXXX,          KC_INS,     KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END \
 )
 
 // Key lock
@@ -52,7 +52,7 @@
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD,    RGB_SAI,    XXXXXXX,    XXXXXXX, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    XXXXXXX,          TG(_LOCK),        RGB_HUD,    RGB_VAD,    RGB_VAI,    RGB_HUI,    RGB_TOG \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    _______,    XXXXXXX,          TG(_LOCK),        RGB_TOG,    RGB_VAD,    RGB_VAI,    RGB_HUD,    RGB_HUI \
 )
 
 // Reset
