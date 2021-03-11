@@ -26,20 +26,20 @@
 enum my_layers {
     _COLE,
     _QWER,
-    _COMM,
-    _OVER,
+    _BASE,
+    _XTND,
     _LOCK,
-    _FUNC,
+    _QMKB,
     _RSET
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLE] = KEYMAP_COLE,
     [_QWER] = KEYMAP_QWER,
-    [_COMM] = KEYMAP_COMM,
-    [_OVER] = KEYMAP_OVER,
+    [_BASE] = KEYMAP_BASE,
+    [_XTND] = KEYMAP_XTND,
     [_LOCK] = KEYMAP_LOCK,
-    [_FUNC] = KEYMAP_FUNC,
+    [_QMKB] = KEYMAP_QMKB,
     [_RSET] = KEYMAP_RSET
 };
 
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void eeconfig_init_user(void) {
     eeconfig_update_rgblight_default();
     rgblight_mode(RGBLIGHT_DEFAULT_MODE);
-    default_layer_or(1UL << _COMM);
+    default_layer_or(1UL << _BASE);
 
     #if defined(AUDIO_ENABLE)
         PLAY_SONG(eeprom_reset);
@@ -99,7 +99,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
             PLAY_SONG(default_layer_songs[_QWER]);
         }
     #endif /* AUDIO_ENABLE && DEFAULT_LAYER_SONGS */
-    return (state | (1UL << _COMM));
+    return (state | (1UL << _BASE));
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
