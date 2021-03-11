@@ -29,16 +29,16 @@
     KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_QUOT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
     KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_COMM,    KC_DOT,     KC_SLSH,    KC_ENT, \
-    KC_LGUI,    KC_LALT,    KC_LANG1,   KC_LANG2,   KC_LCTL,          KC_SPC,           MO(_XTND),  KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
+    KC_LGUI,    KC_LALT,    KC_MS_BTN1, KC_MS_BTN2, KC_LCTL,          KC_SPC,           MO(_XTND),  KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
 )
 
 // Extended keys
 #define KEYMAP_XTND LAYOUT_preonic_1x2uC( \
-    KC_PAUS,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LBRC,    KC_RBRC,    KC_DEL, \
+    KC_PAUS,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_CLCK,    KC_NLCK,    KC_LANG1,   KC_LANG2,   KC_LBRC,    KC_RBRC,    KC_DEL, \
     KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_GRV, \
     KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_BSLS, \
     _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_INS, \
-    _______,    _______,    KC_CLCK,    KC_NLCK,    _______,          MO(_QMKB),        _______,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END \
+    _______,    _______,    KC_MS_BTN4, KC_MS_BTN5, _______,          MO(_QMKB),        _______,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END \
 )
 
 // QMK functions
