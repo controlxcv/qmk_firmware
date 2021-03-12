@@ -26,7 +26,7 @@
 enum my_layers {
     _COLE,
     _QWER,
-    _DVOR,
+    // _DVOR,
     _BASE,
     _XTND,
     _QMKB,
@@ -36,7 +36,7 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLE] = KEYMAP_COLE,
     [_QWER] = KEYMAP_QWER,
-    [_DVOR] = KEYMAP_DVOR,
+    // [_DVOR] = KEYMAP_DVOR,
     [_BASE] = KEYMAP_BASE,
     [_XTND] = KEYMAP_XTND,
     [_QMKB] = KEYMAP_QMKB,
@@ -98,9 +98,11 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         else if (layer_state_cmp(state, _QWER)) {
             PLAY_SONG(default_layer_songs[_QWER]);
         }
+        /*
         else if (layer_state_cmp(state, _DVOR)) {
             PLAY_SONG(default_layer_songs[_DVOR]);
         }
+        */
     #endif /* AUDIO_ENABLE && DEFAULT_LAYER_SONGS */
     return (state | (1UL << _BASE));
 }

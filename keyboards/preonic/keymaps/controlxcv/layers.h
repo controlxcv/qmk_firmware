@@ -15,6 +15,8 @@
     XXXXXXX,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
+
+/*
 #define KEYMAP_DVOR LAYOUT_preonic_1x2uC( \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX, \
     XXXXXXX,    KC_SLSH,    KC_COMM,    KC_DOT,     KC_P,       KC_Y,       KC_F,       KC_G,       KC_C,       KC_R,       KC_L,       XXXXXXX, \
@@ -22,32 +24,33 @@
     XXXXXXX,    KC_SCLN,    KC_Q,       KC_J,       KC_K,       KC_X,       KC_B,       KC_M,       KC_W,       KC_V,       KC_Z,       XXXXXXX, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX \
 )
+*/
 
 // Common keys
 #define KEYMAP_BASE LAYOUT_preonic_1x2uC( \
     KC_ESC,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,       KC_8,       KC_9,       KC_0,       KC_BSPC, \
-    KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
+    KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL, \
     KC_QUOT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS, \
-    KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_COMM,    KC_DOT,     KC_SLSH,    KC_ENT, \
-    KC_LGUI,    KC_LALT,    KC_LANG1,   KC_LANG2,   KC_LCTL,          KC_SPC,           MO(_XTND),  KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
+    KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_SLSH,    KC_UP,      KC_COMM,    KC_DOT, \
+    KC_TAB,     KC_LGUI,    KC_APP,     KC_LALT,    KC_LCTL,          KC_SPC,           MO(_XTND),  KC_LEFT,    KC_DOWN,    KC_RGHT,    KC_ENT \
 )
 
 // Extended keys
 #define KEYMAP_XTND LAYOUT_preonic_1x2uC( \
-    KC_PAUS,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LBRC,    KC_RBRC,    KC_DEL, \
-    KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_GRV, \
-    KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_BSLS, \
-    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_VOLD,    KC_VOLU,    KC_MUTE,    KC_INS, \
-    _______,    _______,    KC_CLCK,    KC_NLCK,    _______,          MO(_QMKB),        _______,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END \
+    KC_PAUS,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_GRV,     KC_LBRC,    KC_RBRC,    KC_DEL, \
+    KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_VOLU, \
+    KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_VOLD, \
+    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_PGUP,    KC_LANG1,   KC_LANG2, \
+    KC_CLCK,    _______,    KC_NLCK,    _______,    _______,          MO(_QMKB),        _______,    KC_HOME,    KC_PGDN,    KC_END,     KC_INS \
 )
 
 // QMK functions
 #define KEYMAP_QMKB LAYOUT_preonic_1x2uC( \
-    EEP_RST,    DF(_COLE),  DF(_QWER),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_T,    RGB_M_R,    RGB_M_SW,   RGB_TOG, \
+    EEP_RST,    DF(_COLE),  DF(_QWER),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_M_T, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAI, \
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    EEP_RST, \
-    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    MO(_RSET),        _______,          _______,    RGB_VAD,    RGB_VAI,    RGB_HUD,    RGB_HUI \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_VAI,    RGB_SPD,    RGB_SPI, \
+    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    MO(_RSET),        _______,          _______,    RGB_HUD,    RGB_VAD,    RGB_HUI,    RGB_TOG \
 )
 
 // Reset
