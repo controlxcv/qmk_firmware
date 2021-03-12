@@ -47,7 +47,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Functions
  */
 
-
 #if defined(AUDIO_ENABLE)
     float eeprom_reset[][2] = SONG(STARTUP_SOUND);
     // float caps_on[][2] = SONG(CAPS_LOCK_ON_SOUND);
@@ -60,12 +59,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void eeconfig_init_user(void) {
     eeconfig_update_rgblight_default();
+    rgblight_setrgb(RGB_OFF);
     rgblight_mode(RGBLIGHT_DEFAULT_MODE);
     default_layer_or(1UL << _BASE);
 
     #if defined(AUDIO_ENABLE)
         PLAY_SONG(eeprom_reset);
     #endif /* AUDIO_ENABLE */
+}
+
+/* RGB Layout
+    esc ------------\
+    |  6  5   4  3  |
+    |       0       |
+    |  7  8   1  2  |
+    \----- spc -- ent
+*/
+void keyboard_pre_init_user(void) {
+    rgblight_set_effect_range(1, 8);
+}
+void keyboard_post_init_user(void) {
+    rgblight_setrgb(RGB_OFF);
 }
 
 // bool led_update_user(led_t led_state) {
