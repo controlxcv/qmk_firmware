@@ -11,6 +11,24 @@
 
 #define FORCE_NKRO
 
+/* RGB Layout
+    esc ------------\
+    |  6  5   4  3  |
+    |       0       |
+    |  7  8   1  2  |
+    \----- spc -- ent
+*/
+// #ifdef RGBLED_NUM
+// #undef RGBLED_NUM
+// #endif
+// #define RGBLED_NUM 9
+//                            0  1  2  3  4  5  6  7  8  unmapped
+// #define RGBLIGHT_LED_MAP { 0, 3, 4, 8, 7, 6, 5, 1, 2 }
+// #define RGBLIGHT_LED_MAP { 0, 3, 4, 4, 3, 2, 1, 1, 2 }
+// #define RGBLIGHT_LED_MAP { 2, 2, 3, 4, 3, 2, 1, 0, 1 }
+
+//#define USE_CIE1931_CURVE
+
 #undef RGBLIGHT_ANIMATIONS
 #define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL

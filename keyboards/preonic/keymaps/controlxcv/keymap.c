@@ -76,6 +76,9 @@ void eeconfig_init_user(void) {
     \----- spc -- ent
 */
 void keyboard_pre_init_user(void) {
+    // define range of virtual leds to be mapped to the physical ones
+    // rgblight_set_clipping_range(VLED_START, RGBLED_NUM);
+    // define range of virtual leds to use for effects
     rgblight_set_effect_range(1, 8);
 }
 void keyboard_post_init_user(void) {
