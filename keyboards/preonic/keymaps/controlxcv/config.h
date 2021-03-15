@@ -34,8 +34,11 @@
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 #define RGBLIGHT_EFFECT_RGB_TEST
 
-#define RGBLIGHT_HUE_STEP 8      // 0 8 16 24 ... 240 248 256 (32 steps, wrap around)
-#define RGBLIGHT_DEFAULT_HUE 128 // cyan
+// #define RGBLIGHT_HUE_STEP 8      // 0 8 16 24 ... 240 248 256 (32 steps, wrap around)
+// #define RGBLIGHT_DEFAULT_HUE 128 // cyan
+
+#define RGBLIGHT_HUE_STEP 32
+#define RGBLIGHT_DEFAULT_HUE 0
 
 #define RGBLIGHT_SAT_STEP 51     // 0 51 102 153 204 255 (6 steps)
 #define RGBLIGHT_DEFAULT_SAT 255 // vibrant

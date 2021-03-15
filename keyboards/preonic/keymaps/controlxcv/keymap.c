@@ -26,7 +26,7 @@
 enum my_layers {
     _COLE,
     _QWER,
-    // _DVOR,
+    _DVOR,
     _BASE,
     _XTND,
     _QMKB,
@@ -36,7 +36,7 @@ enum my_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLE] = KEYMAP_COLE,
     [_QWER] = KEYMAP_QWER,
-    // [_DVOR] = KEYMAP_DVOR,
+    [_DVOR] = KEYMAP_DVOR,
     [_BASE] = KEYMAP_BASE,
     [_XTND] = KEYMAP_XTND,
     [_QMKB] = KEYMAP_QMKB,
@@ -106,6 +106,85 @@ void keyboard_post_init_user(void) {
 //     return true;
 // }
 
+RGB rgblight_hsv_to_rgb(HSV hsv) {
+    RGB      rgb;
+    uint8_t  region, remainder, p, q, t;
+    uint16_t h, s, v;
+
+    #if defined(USE_CIE1931_CURVE)
+        extern const uint8_t CIE1931_CURVE[];
+    #endif
+
+    if (hsv.s == 0) {
+        #if defined(USE_CIE1931_CURVE)
+            rgb.r = rgb.g = rgb.b = pgm_read_byte(&CIE1931_CURVE[hsv.v]);
+        #else
+            rgb.r = rgb.g = rgb.b = hsv.v;
+        #endif
+        return rgb;
+    }
+
+    // transform hue
+
+    h = hsv.h;
+    s = hsv.s;
+    #if defined(USE_CIE1931_CURVE)
+        v = pgm_read_byte(&CIE1931_CURVE[hsv.v]);
+    #else
+        v = hsv.v;
+    #endif
+
+    region    = h * 6 / 255;
+    remainder = (h * 2 - region * 85) * 3;
+
+    // P = V * S
+    p = (v * (255 - s)) >> 8;
+
+    // Q = V * 
+    q = (v * (255 - ((s * remainder) >> 8))) >> 8;
+    t = (v * (255 - ((s * (255 - remainder)) >> 8))) >> 8;
+
+    switch (region) {
+        case 6:
+        case 0:
+            rgb.r = v;
+            rgb.g = t;
+            rgb.b = p;
+            break;
+        case 1:
+            rgb.r = q;
+            rgb.g = v;
+            rgb.b = p;
+            break;
+        case 2:
+            rgb.r = p;
+            rgb.g = v;
+            rgb.b = t;
+            break;
+        case 3:
+            rgb.r = p;
+            rgb.g = q;
+            rgb.b = v;
+            break;
+        case 4:
+            rgb.r = t;
+            rgb.g = p;
+            rgb.b = v;
+            break;
+        default:
+            rgb.r = v;
+            rgb.g = p;
+            rgb.b = q;
+            break;
+    }
+
+    // rgb.r = 0;
+    // rgb.g = 255;
+    // rgb.b = 0;
+
+    return rgb;
+}
+
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     #if defined(AUDIO_ENABLE) && defined(DEFAULT_LAYER_SONGS)
         extern float default_layer_songs[][16][2];
@@ -115,11 +194,9 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         else if (layer_state_cmp(state, _QWER)) {
             PLAY_SONG(default_layer_songs[_QWER]);
         }
-        /*
         else if (layer_state_cmp(state, _DVOR)) {
             PLAY_SONG(default_layer_songs[_DVOR]);
         }
-        */
     #endif /* AUDIO_ENABLE && DEFAULT_LAYER_SONGS */
     return (state | (1UL << _BASE));
 }
