@@ -106,83 +106,38 @@ void keyboard_post_init_user(void) {
 //     return true;
 // }
 
+
 RGB rgblight_hsv_to_rgb(HSV hsv) {
-    RGB      rgb;
-    uint8_t  region, remainder, p, q, t;
-    uint16_t h, s, v;
 
-    #if defined(USE_CIE1931_CURVE)
-        extern const uint8_t CIE1931_CURVE[];
-    #endif
+    // Remap the RYGCBM "color cube" hues to RYGB "perceptual" values
 
-    if (hsv.s == 0) {
-        #if defined(USE_CIE1931_CURVE)
-            rgb.r = rgb.g = rgb.b = pgm_read_byte(&CIE1931_CURVE[hsv.v]);
-        #else
-            rgb.r = rgb.g = rgb.b = hsv.v;
-        #endif
-        return rgb;
+    HSV hsv_new = hsv;
+    uint16_t h_new;
+
+    // increase precision to 16-bit for better division results
+    h_new = hsv.h * 256;
+
+    // precomputed fixed point boundaries
+    // 32768 == 256 * 128
+    // 21845 == 32768 * 2 / 3
+
+    // angles are in degrees
+    if (h_new < 32768) {
+        // remap sector [0,120) to [0,180)
+        // - stretch first one-third slice to first half circle
+        h_new = h_new * 2 / 3;
+    }
+    else {
+        // remap sector [120,360) to [180,360)
+        // - squeeze remaining two-thirds slice into second half circle
+        h = 21845 + (h_new - 32768) * 4 / 3;
     }
 
-    // transform hue
+    // reduce precision to original 8-bit
+    hsv_new.h = h_new / 256;
 
-    h = hsv.h;
-    s = hsv.s;
-    #if defined(USE_CIE1931_CURVE)
-        v = pgm_read_byte(&CIE1931_CURVE[hsv.v]);
-    #else
-        v = hsv.v;
-    #endif
+    return hsv_to_rgb(hsv_new);
 
-    region    = h * 6 / 255;
-    remainder = (h * 2 - region * 85) * 3;
-
-    // P = V * S
-    p = (v * (255 - s)) >> 8;
-
-    // Q = V * 
-    q = (v * (255 - ((s * remainder) >> 8))) >> 8;
-    t = (v * (255 - ((s * (255 - remainder)) >> 8))) >> 8;
-
-    switch (region) {
-        case 6:
-        case 0:
-            rgb.r = v;
-            rgb.g = t;
-            rgb.b = p;
-            break;
-        case 1:
-            rgb.r = q;
-            rgb.g = v;
-            rgb.b = p;
-            break;
-        case 2:
-            rgb.r = p;
-            rgb.g = v;
-            rgb.b = t;
-            break;
-        case 3:
-            rgb.r = p;
-            rgb.g = q;
-            rgb.b = v;
-            break;
-        case 4:
-            rgb.r = t;
-            rgb.g = p;
-            rgb.b = v;
-            break;
-        default:
-            rgb.r = v;
-            rgb.g = p;
-            rgb.b = q;
-            break;
-    }
-
-    // rgb.r = 0;
-    // rgb.g = 255;
-    // rgb.b = 0;
-
-    return rgb;
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
