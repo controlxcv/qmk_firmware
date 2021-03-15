@@ -106,7 +106,6 @@ void keyboard_post_init_user(void) {
 //     return true;
 // }
 
-
 RGB rgblight_hsv_to_rgb(HSV hsv) {
 
     // Remap the RYGCBM "color cube" hues to RYGB "perceptual" values
@@ -130,7 +129,7 @@ RGB rgblight_hsv_to_rgb(HSV hsv) {
     else {
         // remap sector [120,360) to [180,360)
         // - squeeze remaining two-thirds slice into second half circle
-        h = 21845 + (h_new - 32768) * 4 / 3;
+        h_new = 21845 + (h_new - 32768) * 4 / 3;
     }
 
     // reduce precision to original 8-bit
