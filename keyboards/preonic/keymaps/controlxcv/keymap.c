@@ -47,27 +47,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Functions
  */
 
-#if defined(AUDIO_ENABLE)
-    float eeprom_reset[][2] = SONG(STARTUP_SOUND);
-    // float caps_on[][2] = SONG(CAPS_LOCK_ON_SOUND);
-    // float caps_off[][2] = SONG(CAPS_LOCK_OFF_SOUND);
-    // float num_on[][2] = SONG(NUM_LOCK_ON_SOUND);
-    // float num_off[][2] = SONG(NUM_LOCK_OFF_SOUND);
-    // float scroll_on[][2] = SONG(SCROLL_LOCK_ON_SOUND);
-    // float scroll_off[][2] = SONG(SCROLL_LOCK_OFF_SOUND);
-#endif
-
-void eeconfig_init_user(void) {
-    eeconfig_update_rgblight_default();
-    rgblight_setrgb(RGB_OFF);
-    rgblight_mode(RGBLIGHT_DEFAULT_MODE);
-    default_layer_or(1UL << _BASE);
-
-    #if defined(AUDIO_ENABLE)
-        PLAY_SONG(eeprom_reset);
-    #endif /* AUDIO_ENABLE */
-}
-
 /* RGB Layout
     esc ------------\
     |  6  5   4  3  |
@@ -106,37 +85,122 @@ void keyboard_post_init_user(void) {
 //     return true;
 // }
 
+// RGB rgblight_hsv_to_rgb(HSV hsv) {
+
+//     // Remap the RYGCBM "color cube" hues to RYGB "perceptual" values
+
+//     HSV hsv_new = hsv;
+//     uint16_t h_new;
+
+//     // increase precision to 16-bit for better division results
+//     h_new = hsv.h * 256;
+
+//     // precomputed fixed point boundaries
+//     // 32768 == 256 * 128
+//     // 21845 == 32768 * 2 / 3
+
+//     // angles are in degrees
+//     if (h_new < 32768) {
+//         // remap sector [0,120) to [0,180)
+//         // - stretch first one-third slice to first half circle
+//         h_new = h_new * 2 / 3;
+//     }
+//     else {
+//         // remap sector [120,360) to [180,360)
+//         // - squeeze remaining two-thirds slice into second half circle
+//         h_new = 21845 + (h_new - 32768) * 4 / 3;
+//     }
+
+//     // reduce precision to original 8-bit
+//     hsv_new.h = h_new / 256;
+
+//     return hsv_to_rgb(hsv_new);
+
+// }
+
+/* multiply range values */
+inline uint16_t mult(uint16_t a, uint16_t b) { return (a >> 8) * (b >> 8); }
+/* complement of range */
+inline uint16_t comp(uint16_t a) { return UINT16_MAX - a; }
+
 RGB rgblight_hsv_to_rgb(HSV hsv) {
+    RGB rgb = {.r = 0, .g = 0, .b = 0};
+    uint16_t sector = 0;
+    uint16_t offset = 0;
+    uint16_t low = 0;
+    uint16_t mid = 0;
+    uint16_t high = 0;
+    uint16_t hue = 0;
+    uint16_t sat = 0;
+    uint16_t val = 0;
 
-    // Remap the RYGCBM "color cube" hues to RYGB "perceptual" values
+    //#define HSV_RGB_BYPASS
+    #if defined(HSV_RGB_BYPASS)
+        return hsv_to_rgb(hsv);
+    #endif
 
-    HSV hsv_new = hsv;
-    uint16_t h_new;
+    #if defined(USE_CIE1931_CURVE)
+        extern const uint8_t CIE1931_CURVE[];
+    #endif
 
-    // increase precision to 16-bit for better division results
-    h_new = hsv.h * 256;
-
-    // precomputed fixed point boundaries
-    // 32768 == 256 * 128
-    // 21845 == 32768 * 2 / 3
-
-    // angles are in degrees
-    if (h_new < 32768) {
-        // remap sector [0,120) to [0,180)
-        // - stretch first one-third slice to first half circle
-        h_new = h_new * 2 / 3;
+    if (hsv.s == 0) {
+        #if defined(USE_CIE1931_CURVE)
+            rgb.r = rgb.g = rgb.b = pgm_read_byte(&CIE1931_CURVE[hsv.v]);
+        #else
+            rgb.r = rgb.g = rgb.b = hsv.v;
+        #endif
+        return rgb;
     }
-    else {
-        // remap sector [120,360) to [180,360)
-        // - squeeze remaining two-thirds slice into second half circle
-        h_new = 21845 + (h_new - 32768) * 4 / 3;
+
+    /* Stretch precision from 8-bit to 16-bit */
+    hue = hsv.h << 8;
+    sat = hsv.s << 8;
+    #if defined(USE_CIE1931_CURVE)
+        val = pgm_read_byte(&CIE1931_CURVE[hsv.v]) << 8;
+    #else
+        val = hsv.v << 8;
+    #endif
+
+    /* Important Reminder: Fixed point computations always drop fractional components */
+    /*
+        whole circumference: 65536
+        number of sectors: 6
+        sector_width = 65536 / 6
+
+        sector occupies only the least significant 3 bits (max value 7)
+            sector = hue / sector_width
+            sector = hue / (65536 / 6)
+            sector = hue / 4 * 3 / 8192
+
+        offset is multiplied by 6 to normalize the range to [0, 65536)
+            offset = (hue - (sector * sector_width)) * 6
+            offset = (hue - (sector * (65536 / 6))) * 6
+            offset = (hue - ((sector * 8192) / 3 * 4)) * 6
+    */
+
+    #define USE_RGBY_HUE
+    #ifdef USE_RGBY_HUE
+        sector = ((hue >> 2) * 3) >> 13;
+        offset = (hue - (((sector << 13) / 3) << 2)) * 6;
+    #else
+    #endif
+
+    high = val >> 8;
+    low = mult(val, comp(sat)) >> 8;
+    /* mid depends on whether the sector is odd or even */
+    mid = ((sector & 1) == 1) ? mult(val, comp(mult(sat, offset))) >> 8 :
+                                mult(val, comp(mult(sat, comp(offset)))) >> 8 ;
+
+    switch (sector) {
+        case 0:  rgb = (RGB) {.r = high, .g = mid,  .b = low};  break;
+        case 1:  rgb = (RGB) {.r = mid,  .g = high, .b = low};  break;
+        case 2:  rgb = (RGB) {.r = low,  .g = high, .b = mid};  break;
+        case 3:  rgb = (RGB) {.r = low,  .g = mid,  .b = high}; break;
+        case 4:  rgb = (RGB) {.r = mid,  .g = low,  .b = high}; break;
+        case 5:  rgb = (RGB) {.r = high, .g = low,  .b = mid};  break;
+        default: rgb = (RGB) {.r = 0,    .g = 0,    .b = 0};    break;
     }
-
-    // reduce precision to original 8-bit
-    hsv_new.h = h_new / 256;
-
-    return hsv_to_rgb(hsv_new);
-
+    return rgb;
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
