@@ -8,7 +8,6 @@
 }
 
 #define NO_MUSIC_MODE
-
 #define FORCE_NKRO
 
 /* RGB Layout
@@ -27,20 +26,18 @@
 // #define RGBLIGHT_LED_MAP { 0, 3, 4, 4, 3, 2, 1, 1, 2 }
 // #define RGBLIGHT_LED_MAP { 2, 2, 3, 4, 3, 2, 1, 0, 1 }
 
-//#define USE_CIE1931_CURVE
-
+#undef USE_CIE1931_CURVE
 #undef RGBLIGHT_ANIMATIONS
-//#define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 #define RGBLIGHT_EFFECT_RGB_TEST
-
-#define RGBLIGHT_HUE_STEP 16     // 32 steps, wrap around
+#define RGBLIGHT_HUE_STEP 16    // 16 steps, wrap around
 #define RGBLIGHT_DEFAULT_HUE 0
-
-#define RGBLIGHT_SAT_STEP 51     // 0 51 102 153 204 255
+#define RGBLIGHT_SAT_STEP 15    // 17 steps
 #define RGBLIGHT_DEFAULT_SAT 255
-
-#define RGBLIGHT_VAL_STEP 51     // 0 51 102 153 204 255
-#define RGBLIGHT_DEFAULT_VAL 153
-
+#define RGBLIGHT_VAL_STEP 15    // 17 steps
+#define RGBLIGHT_DEFAULT_VAL 255
 #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
+
+//#define CXCV_RGBY_HUE
+#define CXCV_MAC_KEYS

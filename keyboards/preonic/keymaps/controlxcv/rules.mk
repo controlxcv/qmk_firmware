@@ -1,4 +1,6 @@
 SRC += muse.c
+SRC += layers.c
+SRC += lights.c
 
 BOOTMAGIC_ENABLE = lite
 COMMAND_ENABLE = no
