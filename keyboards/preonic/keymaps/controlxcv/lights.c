@@ -107,11 +107,24 @@ RGB rgblight_hsv_to_rgb(HSV hsv) {
         offset = (hue - (sector * 10922)) * 6;
     #endif
 
-    high = val >> 8;
-    low = mult(val, comp(sat)) >> 8;
-    /* mid depends on whether the sector is odd or even */
-    mid = ((sector & 1) == 1) ? mult(val, comp(mult(sat, offset))) >> 8 :
-                                mult(val, comp(mult(sat, comp(offset)))) >> 8 ;
+    // high = val >> 8;
+    // low = mult(val, comp(sat)) >> 8;
+    // /* mid depends on whether the sector is even or odd */
+    // mid = ((sector & 1) == 0) ? mult(val, comp(mult(sat, comp(offset)))) >> 8 :
+    //                             mult(val, comp(mult(sat, offset))) >> 8 ;
+
+    const uint16_t P = 46340; // 65535 * sqrt(2)/2
+    const uint16_t Q = 19195; // 65535 * (1 - sqrt(2)/2)
+    uint16_t R = comp(sat);
+    if ((sector & 1) == 0) {
+        high = mult(val, mult(sat, comp(mult(offset, Q))) + R) >> 8;
+        mid  = mult(val, mult(sat,      mult(offset, P))  + R) >> 8;
+    }
+    else {
+        high = mult(val, mult(sat, P + mult(     offset,  Q)) + R) >> 8;
+        mid  = mult(val, mult(sat,     mult(comp(offset), P)) + R) >> 8;
+    }
+    low = mult(val, R) >> 8;
 
     switch (sector) {
         case 0:  rgb = (RGB) { .r = high, .g = mid,  .b = low  }; break;
