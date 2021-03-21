@@ -117,12 +117,12 @@ RGB rgblight_hsv_to_rgb(HSV hsv) {
     const uint16_t Q = 19195; // 65535 * (1 - sqrt(2)/2)
     uint16_t R = comp(sat);
     if ((sector & 1) == 0) {
-        high = mult(val, mult(sat, comp(mult(offset, Q))) + R) >> 8;
-        mid  = mult(val, mult(sat,      mult(offset, P))  + R) >> 8;
+        high = mult(val, mult(sat, comp(mult(offset, Q)) ) + R) >> 8;
+        mid  = mult(val, mult(sat,      mult(offset, P)  ) + R) >> 8;
     }
     else {
-        high = mult(val, mult(sat, P + mult(     offset,  Q)) + R) >> 8;
-        mid  = mult(val, mult(sat,     mult(comp(offset), P)) + R) >> 8;
+        high = mult(val, mult(sat,  P + mult(offset, Q)  ) + R) >> 8;
+        mid  = mult(val, mult(sat,  P - mult(offset, P)  ) + R) >> 8;
     }
     low = mult(val, R) >> 8;
 
