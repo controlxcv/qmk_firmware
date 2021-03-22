@@ -13,28 +13,17 @@ inline uint16_t mult(uint16_t a, uint16_t b) {
     uint32_t result = a * b;
     return result >> 16;
 }
-/* complement of range */
-inline uint16_t comp(uint16_t a) {
-    return UINT16_MAX - a;
-}
 /* 16-bit HSV to RGB computation (still outputs 8-bit) */
 RGB rgblight_hsv_to_rgb(HSV hsv) {
-    RGB rgb = {.r = 0, .g = 0, .b = 0};
-    uint16_t sector = 0;
-    uint16_t offset = 0;
-    uint16_t high = 0;
-    uint16_t mid = 0;
-    uint16_t low = 0;
-    uint16_t hue = 0;
-    uint16_t sat = 0;
-    uint16_t val = 0;
+    uint16_t sector = 0, offset = 0;
+    uint16_t high = 0, mid = 0, low = 0;
+    uint16_t hue = 0, sat = 0, val = 0;
 
     // bypass this function
     // return hsv_to_rgb(hsv);
 
     if (hsv.s == 0) {
-        rgb.r = rgb.g = rgb.b = hsv.v >> 8;
-        return rgb;
+        return (RGB) { .r = hsv.v, .g = hsv.v, .b = hsv.v };
     }
 
     /* Stretch precision of input from 8-bit to 16-bit */
@@ -107,35 +96,27 @@ RGB rgblight_hsv_to_rgb(HSV hsv) {
         offset = (hue - (sector * 10922)) * 6;
     #endif
 
-    // high = val >> 8;
-    // low = mult(val, comp(sat)) >> 8;
-    // /* mid depends on whether the sector is even or odd */
-    // mid = ((sector & 1) == 0) ? mult(val, comp(mult(sat, comp(offset)))) >> 8 :
-    //                             mult(val, comp(mult(sat, offset))) >> 8 ;
-
     const uint16_t P = 46340; // 65535 * sqrt(2)/2
     const uint16_t Q = 19195; // 65535 * (1 - sqrt(2)/2)
-    uint16_t R = comp(sat);
     if ((sector & 1) == 0) {
-        high = mult(val, mult(sat, comp(mult(offset, Q)) ) + R) >> 8;
-        mid  = mult(val, mult(sat,      mult(offset, P)  ) + R) >> 8;
+        high = mult(val, mult(sat, ~mult(offset, Q)) + ~sat) >> 8;
+        mid  = mult(val, mult(sat,  mult(offset, P)) + ~sat) >> 8;
     }
     else {
-        high = mult(val, mult(sat,  P + mult(offset, Q)  ) + R) >> 8;
-        mid  = mult(val, mult(sat,  P - mult(offset, P)  ) + R) >> 8;
+        high = mult(val, mult(sat, ~mult(~offset, Q)) + ~sat) >> 8;
+        mid  = mult(val, mult(sat,  mult(~offset, P)) + ~sat) >> 8;
     }
-    low = mult(val, R) >> 8;
+    low = mult(val, ~sat) >> 8;
 
     switch (sector) {
-        case 0:  rgb = (RGB) { .r = high, .g = mid,  .b = low  }; break;
-        case 1:  rgb = (RGB) { .r = mid,  .g = high, .b = low  }; break;
-        case 2:  rgb = (RGB) { .r = low,  .g = high, .b = mid  }; break;
-        case 3:  rgb = (RGB) { .r = low,  .g = mid,  .b = high }; break;
-        case 4:  rgb = (RGB) { .r = mid,  .g = low,  .b = high }; break;
-        case 5:  rgb = (RGB) { .r = high, .g = low,  .b = mid  }; break;
-        default: rgb = (RGB) { .r = 0,    .g = 0,    .b = 0    }; break;
+        case 0:  return (RGB) { .r = high, .g = mid,  .b = low  }; break;
+        case 1:  return (RGB) { .r = mid,  .g = high, .b = low  }; break;
+        case 2:  return (RGB) { .r = low,  .g = high, .b = mid  }; break;
+        case 3:  return (RGB) { .r = low,  .g = mid,  .b = high }; break;
+        case 4:  return (RGB) { .r = mid,  .g = low,  .b = high }; break;
+        case 5:  return (RGB) { .r = high, .g = low,  .b = mid  }; break;
+        default: return (RGB) { .r = 0,    .g = 0,    .b = 0    }; break;
     }
-    return rgb;
 }
 
 /*
