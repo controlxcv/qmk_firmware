@@ -111,7 +111,7 @@ Region 3
 
 Region 4
     grn = 65535 - offset * (65535 - 46340)
-    blu =     0 + offset + (46340 -     0)
+    blu =     0 + offset * (46340 -     0)
 
 Region 5
     grn = 46340 - offset * (46340 -     0)
@@ -131,36 +131,140 @@ Region 7
 /*
 
 Region 0
-    red = 65535 - offset * (65535 - 60546)
-    grn =     0 + offset * (25079 -     0)
+    red = 65535 - offset * 5079
+    grn =     0 + offset * 25079
 
 Region 1
-    red = 60546 - offset * (60546 - 46340)
-    grn = 25079 + offset * (46340 - 25079)
+    red = 60546 - offset * 14206
+    grn = 25079 + offset * 21261
 
 Region 2
-    red = 46340 - offset * (46340 - 25079)
-    grn = 46340 + offset * (60546 - 46340)
+    red = 46340 - offset * 21261
+    grn = 46340 + offset * 14206
 
 Region 3
-    red = 25079 - offset * (25079 -     0)
-    grn = 60546 + offset * (65535 - 60546)
+    red = 25079 - offset * 25079
+    grn = 60546 + offset * 5079
+
+-------------------------------------
 
 Region 4
-    grn = 65535 - offset * (65535 - 46340)
-    blu =     0 + offset + (46340 -     0)
+    grn = 65535 - offset * 19195
+    blu =     0 + offset * 46340
 
 Region 5
-    grn = 46340 - offset * (46340 -     0)
-    blu = 46340 + offset * (65535 - 46340)
+    grn = 46340 - offset * 46340
+    blu = 46340 + offset * 19195
 
 Region 6
-    blu = 65535 - offset * (65535 - 46340)
-    red =     0 + offset * (46340 -     0)
+    blu = 65535 - offset * 19195
+    red =     0 + offset * 46340
 
 Region 7
-    blu = 46340 - offset * (46340 -     0)
-    red = 46340 + offset * (65535 - 46340)
+    blu = 46340 - offset * 46340
+    red = 46340 + offset * 19195
 
 */
 
+    #if defined CXCV_RGBY_HUE
+
+        // sector = hue / (65536/8)
+        sector = hue >> 13;
+
+        // offset = 8 * (hue - (sector * (65536/8)))
+        offset = (hue - (sector << 13)) << 3;
+
+        switch (sector) {
+            case 0:
+                return (RGB) {
+                    .r = mult(val, mult(sat, 65535 - mult(offset, (65535 - 60546))) + ~sat) >> 8,
+                    .g = mult(val, mult(sat,     0 + mult(offset, (25079 -     0))) + ~sat) >> 8,
+                    .b = mult(val, ~sat) >> 8
+                };
+                break;
+            case 1:
+                return (RGB) {
+                    .r = mult(val, mult(sat, 60546 - mult(offset, (60546 - 46340))) + ~sat) >> 8,
+                    .g = mult(val, mult(sat, 25079 + mult(offset, (46340 - 25079))) + ~sat) >> 8,
+                    .b = mult(val, ~sat) >> 8
+                };
+                break;
+            case 2:
+                return (RGB) {
+                    .r = mult(val, mult(sat, 46340 - mult(offset, (46340 - 25079))) + ~sat) >> 8,
+                    .g = mult(val, mult(sat, 46340 + mult(offset, (60546 - 46340))) + ~sat) >> 8,
+                    .b = mult(val, ~sat) >> 8
+                };
+                break;
+            case 3:
+                return (RGB) {
+                    .r = mult(val, mult(sat, 25079 - mult(offset, (25079 -     0))) + ~sat) >> 8,
+                    .g = mult(val, mult(sat, 60546 + mult(offset, (65535 - 60546))) + ~sat) >> 8,
+                    .b = mult(val, ~sat) >> 8
+                };
+                break;
+            case 4:
+                return (RGB) {
+                    .r = mult(val, ~sat) >> 8,
+                    .g = mult(val, mult(sat, 65535 - mult(offset, (65535 - 46340))) + ~sat) >> 8,
+                    .b = mult(val, mult(sat,     0 + mult(offset, (46340 -     0))) + ~sat) >> 8
+                };
+                break;
+            case 5:
+                return (RGB) {
+                    .r = mult(val, ~sat) >> 8,
+                    .g = mult(val, mult(sat, 46340 - mult(offset, (46340 -     0))) + ~sat) >> 8,
+                    .b = mult(val, mult(sat, 46340 + mult(offset, (65535 - 46340))) + ~sat) >> 8
+                };
+                break;
+            case 6:
+                return (RGB) {
+                    .r = mult(val, mult(sat, 0     + mult(offset, (46340 -     0))) + ~sat) >> 8,
+                    .g = mult(val, ~sat) >> 8,
+                    .b = mult(val, mult(sat, 65535 - mult(offset, (65535 - 46340))) + ~sat) >> 8
+                };
+                break;
+            case 7:
+                return (RGB) {
+                    .r = mult(val, mult(sat, 46340 + mult(offset, (65535 - 46340))) + ~sat) >> 8,
+                    .g = mult(val, ~sat) >> 8,
+                    .b = mult(val, mult(sat, 46340 - mult(offset, (46340 -     0))) + ~sat) >> 8
+                };
+                break;
+
+            default: return (RGB) { .r = 0,    .g = 0,    .b = 0    }; break;
+        }
+
+    #else
+
+        uint16_t high = 0, mid = 0, low = 0;
+
+        // sector = hue / (65536/6)
+        uint32_t hue_x3 = hue * 3;
+        sector = hue_x3 >> 15;
+
+        // offset = 6 * (hue - (sector * (65536/6)))
+        offset = 6 * (hue - (sector * 10922));
+
+        if ((sector & 1) == 0) {
+            high = mult(val, mult(sat, ~mult(offset, 19195)) + ~sat) >> 8;
+            mid  = mult(val, mult(sat,  mult(offset, 46340)) + ~sat) >> 8;
+        }
+        else {
+            high = mult(val, mult(sat, ~mult(~offset, 19195)) + ~sat) >> 8;
+            mid  = mult(val, mult(sat,  mult(~offset, 46340)) + ~sat) >> 8;
+        }
+        low = mult(val, ~sat) >> 8;
+
+        switch (sector) {
+            case 0:  return (RGB) { .r = high, .g = mid,  .b = low  }; break;
+            case 1:  return (RGB) { .r = mid,  .g = high, .b = low  }; break;
+            case 2:  return (RGB) { .r = low,  .g = high, .b = mid  }; break;
+            case 3:  return (RGB) { .r = low,  .g = mid,  .b = high }; break;
+            case 4:  return (RGB) { .r = mid,  .g = low,  .b = high }; break;
+            case 5:  return (RGB) { .r = high, .g = low,  .b = mid  }; break;
+            default: return (RGB) { .r = 0,    .g = 0,    .b = 0    }; break;
+        }
+
+    #endif /* CXCV_RGBY_HUE */
+    
