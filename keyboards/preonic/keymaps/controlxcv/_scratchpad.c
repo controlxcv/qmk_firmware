@@ -126,3 +126,41 @@ Region 7
     red = 46340 + offset * (65535 - 46340)
 
 */
+
+
+/*
+
+Region 0
+    red = 65535 - offset * (65535 - 60546)
+    grn =     0 + offset * (25079 -     0)
+
+Region 1
+    red = 60546 - offset * (60546 - 46340)
+    grn = 25079 + offset * (46340 - 25079)
+
+Region 2
+    red = 46340 - offset * (46340 - 25079)
+    grn = 46340 + offset * (60546 - 46340)
+
+Region 3
+    red = 25079 - offset * (25079 -     0)
+    grn = 60546 + offset * (65535 - 60546)
+
+Region 4
+    grn = 65535 - offset * (65535 - 46340)
+    blu =     0 + offset + (46340 -     0)
+
+Region 5
+    grn = 46340 - offset * (46340 -     0)
+    blu = 46340 + offset * (65535 - 46340)
+
+Region 6
+    blu = 65535 - offset * (65535 - 46340)
+    red =     0 + offset * (46340 -     0)
+
+Region 7
+    blu = 46340 - offset * (46340 -     0)
+    red = 46340 + offset * (65535 - 46340)
+
+*/
+
