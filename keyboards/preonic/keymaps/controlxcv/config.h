@@ -6,16 +6,29 @@
     SONG(QWERTY_SOUND), \
     SONG(DVORAK_SOUND) \
 }
-
 #define NO_MUSIC_MODE
 #define FORCE_NKRO
+
+/*
+    RGB Layout
+        esc ------------\
+        |  6  5   4  3  |
+        |       0       |
+        |  7  8   1  2  |
+        \----- spc -- ent
+*/
 
 #undef USE_CIE1931_CURVE
 #undef RGBLIGHT_ANIMATIONS
 
+/*                       |  0  1  2  3  4  5  6  7  8  | */
+#define RGBLIGHT_LED_MAP {  0, 4, 5, 1, 1, 1, 1, 2, 3  }
+
 #define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 #define RGBLIGHT_EFFECT_RGB_TEST
+
+#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
 
 /* 16 ticks, wrap around */
 #define RGBLIGHT_HUE_STEP 16
@@ -27,6 +40,4 @@
 
 /* 51 102 153 204 255 */
 #define RGBLIGHT_VAL_STEP 51
-#define RGBLIGHT_DEFAULT_VAL 153
-
-#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL
+#define RGBLIGHT_DEFAULT_VAL 102
