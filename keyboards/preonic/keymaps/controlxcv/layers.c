@@ -45,21 +45,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,     _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_EQL,
         KC_BSLS,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_MINS,
         KC_LSFT,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    KC_QUOT,
-        MO(_XTND),  MO(_QMKB),  KC_LGUI,    KC_LALT,    KC_LCTL,          KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT
+        MO(_XTND),  MO(_QMKB),  KC_LGUI,    KC_LALT,    KC_LCTL,          KC_SPC,           KC_ENT,     KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT
     ),
     [_XTND] = LAYOUT_preonic_1x2uC(
         KC_PAUS,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_GRV,     KC_LBRC,    KC_RBRC,    KC_DEL,
         KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_NLCK,
         KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_CLCK,
         _______,    KC_VOLD,    KC_VOLU,    KC_LANG1,   KC_LANG2,   XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_INS,
-        _______,    XXXXXXX,    _______,    _______,     _______,         XXXXXXX,          XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END
+        _______,    XXXXXXX,    _______,    _______,     _______,         XXXXXXX,          XXXXXXX,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END
     ),
     [_QMKB] = LAYOUT_preonic_1x2uC(
         MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_M_T,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAI,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_COLE),  DF(_QWER),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_TOG,
-        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    RGB_HUD,    RGB_VAD,    RGB_VAI,    RGB_HUI
+        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    RGB_VAD,    RGB_VAI,    RGB_HUD,    RGB_HUI
     ),
     [_RSET] = LAYOUT_preonic_1x2uC(
         _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RESET,
