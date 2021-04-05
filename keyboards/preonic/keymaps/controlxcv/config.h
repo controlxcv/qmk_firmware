@@ -22,7 +22,7 @@
 #undef RGBLIGHT_ANIMATIONS
 
 /*                       |  0  1  2  3  4  5  6  7  8  | */
-#define RGBLIGHT_LED_MAP {  0, 3, 3, 4, 4, 1, 1, 2, 2  }
+#define RGBLIGHT_LED_MAP {  3, 0, 0, 5, 4, 2, 1, 0, 0  }
 
 #define RGBLIGHT_EFFECT_RAINBOW_MOOD
 #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
@@ -40,4 +40,4 @@
 
 /* 51 102 153 204 255 */
 #define RGBLIGHT_VAL_STEP 51
-#define RGBLIGHT_DEFAULT_VAL 102
+#define RGBLIGHT_DEFAULT_VAL 153

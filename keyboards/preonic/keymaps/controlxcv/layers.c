@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-enum my_layers { _COLE, _QWER, _DVOR, _BASE, _XTND, _QMKB, _RSET };
+enum my_layers { _QWER, _COLE, _DVOR, _BASE, _XTND, _QMKB, _RSET };
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
     #if defined AUDIO_ENABLE && defined DEFAULT_LAYER_SONGS
