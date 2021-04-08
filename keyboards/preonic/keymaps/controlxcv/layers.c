@@ -28,7 +28,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         KC_TAB,     P_00,       P_01,       P_02,       P_03,       P_04,       P_05,       P_06,       P_07,       P_08,       P_09,       KC_EQL, \
         KC_BSLS,    P_10,       P_11,       P_12,       P_13,       P_14,       P_15,       P_16,       P_17,       P_18,       P_19,       KC_MINS, \
         KC_LSFT,    P_20,       P_21,       P_22,       P_23,       P_24,       P_25,       P_26,       P_27,       P_28,       P_29,       KC_QUOT, \
-        MO(_XTND),  MO(_QMKB),  KC_LGUI,    KC_LALT,    KC_LCTL,          KC_SPC,           KC_ENT,     KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
+        MO(_XTND),  MO(_QMKB),  KC_LGUI,    KC_LALT,    KC_LCTL,          KC_SPC,           KC_LEFT,    KC_RGHT,    KC_DOWN,    KC_UP,      KC_ENT \
     )
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -52,20 +52,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_NLCK,
         KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_CLCK,
         _______,    KC_VOLD,    KC_VOLU,    KC_LANG1,   KC_LANG2,   XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_INS,
-        _______,    XXXXXXX,    _______,    _______,     _______,         XXXXXXX,          XXXXXXX,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END
+        _______,    XXXXXXX,    _______,    _______,     _______,         XXXXXXX,          KC_HOME,    KC_END,     KC_PGDN,    KC_PGUP,    XXXXXXX
     ),
     [_QMKB] = LAYOUT_preonic_1x2uC(
         MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_M_T,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAI,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD,
         XXXXXXX,    XXXXXXX,    DF(_COLE),  DF(_QWER),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_TOG,
-        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    RGB_VAD,    RGB_VAI,    RGB_HUD,    RGB_HUI
+        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          RGB_HUD,    RGB_HUI,    RGB_VAD,    RGB_VAI,    XXXXXXX
     ),
     [_RSET] = LAYOUT_preonic_1x2uC(
         _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RESET,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
-        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          DEBUG,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX
+        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    DEBUG
     )
 };
