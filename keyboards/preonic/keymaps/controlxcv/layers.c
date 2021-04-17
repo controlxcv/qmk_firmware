@@ -28,7 +28,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         KC_TAB,     P_00,       P_01,       P_02,       P_03,       P_04,       P_05,       P_06,       P_07,       P_08,       P_09,       KC_EQL, \
         KC_BSLS,    P_10,       P_11,       P_12,       P_13,       P_14,       P_15,       P_16,       P_17,       P_18,       P_19,       KC_MINS, \
         KC_LSFT,    P_20,       P_21,       P_22,       P_23,       P_24,       P_25,       P_26,       P_27,       P_28,       P_29,       KC_QUOT, \
-        MO(_QMKB),  KC_LCMD,    KC_LOPT,    KC_LCTL,    MO(_XTND),        KC_SPC,           KC_ENT,     KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
+        MO(_XTND),  MO(_QMKB),  KC_LCMD,    KC_LOPT,    KC_LCTL,          KC_SPC,           KC_ENT,     KC_DOWN,    KC_UP,      KC_LEFT,    KC_RGHT \
     )
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -41,7 +41,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,
                     KC_A,       KC_S,       KC_D,       KC_F,       KC_G,       KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,
                     KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH
-                    
     ),
     [_DVOR] = LAYOUT_preonic_controlxcv(
                     KC_SLSH,    KC_COMM,    KC_DOT,     KC_P,       KC_Y,       KC_F,       KC_G,       KC_C,       KC_R,       KC_L,
@@ -53,20 +52,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_SLCK,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_NLCK,
         KC_PSCR,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_CLCK,
         _______,    KC_VOLD,    KC_VOLU,    KC_LANG1,   KC_LANG2,   XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_INS,
-        XXXXXXX,    _______,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END
+        _______,    XXXXXXX,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_PGDN,    KC_PGUP,    KC_HOME,    KC_END
     ),
     [_QMKB] = LAYOUT_preonic_1x2uC(
         MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_M_T,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAI,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD,
         XXXXXXX,    XXXXXXX,    DF(_COLE),  DF(_QWER),  DF(_DVOR),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_TOG,
-        _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    RGB_VAD,    RGB_VAI,    RGB_HUD,    RGB_HUI
+        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          XXXXXXX,    RGB_VAD,    RGB_VAI,    RGB_HUD,    RGB_HUI
     ),
     [_RSET] = LAYOUT_preonic_1x2uC(
         _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RESET,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
-        _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          DEBUG,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX
+        XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          DEBUG,      XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX
     )
 };
