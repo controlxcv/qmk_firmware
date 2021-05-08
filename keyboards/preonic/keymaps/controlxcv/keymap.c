@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
 void keyboard_pre_init_user(void) {
-    rgblight_set_effect_range(4, 5);
+    rgblight_set_effect_range(5, 4);
 }
 void keyboard_post_init_user(void) {
     rgblight_setrgb(RGB_OFF);
