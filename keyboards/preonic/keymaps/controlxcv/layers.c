@@ -18,7 +18,9 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-#define KC_LCAG LCAG(KC_NO)
+#define KC_LCAG    LCAG(KC_NO)
+#define KC_IME_ON  KC_LANG1
+#define KC_IME_OFF KC_LANG2
 
 #define \
     LAYOUT_preonic_controlxcv( \
@@ -30,7 +32,7 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
         KC_TAB,     P_00,       P_01,       P_02,       P_03,       P_04,       P_05,       P_06,       P_07,       P_08,       P_09,       KC_EQL, \
         KC_BSLS,    P_10,       P_11,       P_12,       P_13,       P_14,       P_15,       P_16,       P_17,       P_18,       P_19,       KC_MINS, \
         KC_LSFT,    P_20,       P_21,       P_22,       P_23,       P_24,       P_25,       P_26,       P_27,       P_28,       P_29,       KC_QUOT, \
-        MO(_XTND),  KC_LCAG,    KC_LGUI,    KC_LALT,    KC_LCTL,          KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT)
+        MO(_XTND),  MO(_QMKB),  KC_LGUI,    KC_LALT,    KC_LCTL,          KC_SPC,           KC_ENT,     KC_LEFT,    KC_DOWN,    KC_UP,      KC_RGHT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLE] = LAYOUT_preonic_controlxcv(
@@ -51,15 +53,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_XTND] = LAYOUT_preonic_1x2uC(
         KC_GRV,     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_LBRC,    KC_RBRC,    KC_DEL,
         KC_CLCK,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_PSCR,
-        KC_NLCK,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_SLCK,
-        _______,    KC_MUTE,    KC_VOLD,    KC_VOLU,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     KC_PAUS,
-        _______,    MO(_QMKB),  _______,    _______,    _______,          XXXXXXX,          KC_INS,     KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END),
+        KC_NLCK,    KC_LANG3,   KC_LANG4,   KC_LANG5,   XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_SLCK,
+        _______,    KC_LANG1,   KC_LANG2,   XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     KC_PAUS,
+        _______,    XXXXXXX,    _______,    _______,    _______,          XXXXXXX,          KC_INS,     KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END),
 
     [_QMKB] = LAYOUT_preonic_1x2uC(
         MO(_RSET),  XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_M_T,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    DF(_COLE),  DF(_QWER),  DF(_DVOR),  RGB_SAI,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_SAD,
-        XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
+        XXXXXXX,    KC_MUTE,    KC_VOLD,    KC_VOLU,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
         XXXXXXX,    _______,    XXXXXXX,    XXXXXXX,    XXXXXXX,          XXXXXXX,          RGB_TOG,    RGB_HUD,    RGB_VAD,    RGB_VAI,    RGB_HUI),
 
     [_RSET] = LAYOUT_preonic_1x2uC(
