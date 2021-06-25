@@ -18,7 +18,6 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-#define KC_LCAG    LCAG(KC_NO)
 #define KC_IME_ON  KC_LANG1
 #define KC_IME_OFF KC_LANG2
 
