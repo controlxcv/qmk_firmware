@@ -1,10 +1,11 @@
 #include QMK_KEYBOARD_H
 
 void keyboard_pre_init_user(void) {
-    rgblight_set_effect_range(5, 4);
+    rgblight_set_effect_range(2, 7);
 }
 void keyboard_post_init_user(void) {
     rgblight_setrgb(RGB_OFF);
+    rgblight_mode(RGBLIGHT_DEFAULT_MODE);
 }
 
 #if defined CXCV_MAC_KEYS
