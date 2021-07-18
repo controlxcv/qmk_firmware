@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT_preonic_1x2uC(
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_MINS,    KC_EQL,     KC_LBRC,    KC_RBRC,    KC_NLCK,
         XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_CLCK,
-        KC_GRV,     KC_IME_ON,  KC_IME_OFF, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_INS,
+        XXXXXXX,    KC_IME_ON,  KC_IME_OFF, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F5,      KC_F6,      KC_F7,      KC_F8,      KC_GRV,
         _______,    KC_PSCR,    KC_SLCK,    KC_PAUS,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,
-        _______,    XXXXXXX,    _______,    _______,    _______,          XXXXXXX,          XXXXXXX,    KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END),
+        _______,    XXXXXXX,    _______,    _______,    _______,          XXXXXXX,          KC_INS,     KC_HOME,    KC_PGDN,    KC_PGUP,    KC_END),
 
     [_LOWER] = LAYOUT_preonic_1x2uC(
         MO(_RESET), XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    RGB_M_T,    RGB_M_P,    RGB_M_R,    RGB_M_SW,   RGB_SAD,
